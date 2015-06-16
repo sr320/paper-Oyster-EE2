@@ -1,0 +1,47 @@
+| DMR ID (scaffold_start) | Methylation State | DMR length | gene_ID      | annotation          | SPID   | SP description                                                | evalue    |
+|-------------------------|-------------------|------------|--------------|---------------------|--------|---------------------------------------------------------------|-----------|
+| scaffold1174_585061     | HYPER             | 627        | CGI_10026054 | exon                | P10155 | 60 kDa SS-A/Ro ribonucleoprotein                              | 1.00E-113 |
+| scaffold1179_1238509    | HYPER             | 505        | CGI_10027416 | exon                | Q8C8U0 | Liprin-beta-1                                                 | 4.00E-146 |
+| scaffold13_106323       | HYPER             | 512        | CGI_10013201 | exon/intron         | P02595 | Calmodulin                                                    | 1.00E-21  |
+| scaffold13_107092       | HYPER             | 376        | CGI_10013201 | intron              | P02595 | Calmodulin                                                    | 1.00E-21  |
+| scaffold1301_958441     | HYPER             | 503        | CGI_10027751 | intron              | O15027 | Protein transport protein Sec16A                              | 4.00E-123 |
+| scaffold1316_110979     | HYPER             | 237        | CGI_10016296 | 5' of gene          | D8VNS7 | Ryncolin-1                                                    | 2.00E-65  |
+| scaffold1562_130359     | HYPER             | 515        | CGI_10005777 | exon                | Q9CZT5 | Vasorin                                                       | 8.00E-20  |
+| scaffold1599_213387     | HYPER             | 287        | CGI_10027141 | intron              | Q09225 | Nose resistant to fluoxetine protein 6                        | 7.00E-51  |
+| scaffold1603_51928      | HYPER             | 385        | CGI_10012816 | exon/intron         | Q709C8 | Vacuolar protein sorting-associated protein 13C               | 2.00E-81  |
+| scaffold1860_329355     | HYPER             | 517        | CGI_10013950 | exon/intron         | Q9QY94 | Glutamine synthetase                                          | 9.00E-61  |
+| scaffold226_427519      | HYPER             | 493        | CGI_10025356 | exon/intron/exon    | Q7TPQ9 | Arrestin domain-containing protein 3                          | 1.00E-53  |
+| scaffold258_191291      | HYPER             | 491        | CGI_10020049 | exon/intron         | Q2KIK3 | Uncharacterized protein C4orf34 homolog                       | 3.00E-23  |
+| scaffold361_382691      | HYPER             | 364        | CGI_10020861 | intron              | Q9H1A4 | Anaphase-promoting complex subunit 1                          | 5.00E-81  |
+| scaffold370_177521      | HYPER             | 295        | CGI_10025527 | intron              | Q9WU56 | tRNA pseudouridine synthase A, mitochondrial                  | 3.00E-66  |
+| scaffold370_178968      | HYPER             | 228        | CGI_10025527 | intron              | Q9WU56 | tRNA pseudouridine synthase A, mitochondrial                  | 3.00E-66  |
+| scaffold40832_53831     | HYPER             | 257        | CGI_10004455 | intron              | Q9CWR2 | ET and MYND domain-containing protein 3                       | 1.00E-52  |
+| scaffold43598_237957    | HYPER             | 499        | CGI_10011328 | intron              | Q9ERH8 | Solute carrier family 28 member 3                             | 5.00E-149 |
+| scaffold459_186321      | HYPER             | 247        | CGI_10018172 | exon                | Q10751 | Angiotensin-converting enzyme                                 | 0         |
+| scaffold59_225189       | HYPER             | 264        | CGI_10011277 | intron              | Q2M389 | WASH complex subunit 7                                        | 4.00E-77  |
+| scaffold601_1116073     | HYPER             | 515        | CGI_10026858 | intron/exon/intron  | P41436 | Apoptosis inhibitor IAP                                       | 8.00E-31  |
+| scaffold733_26797       | HYPER             | 379        | CGI_10025861 | intron              | O42603 | Corticotropin-releasing factor receptor 2                     | 1.00E-35  |
+| scaffold733_27741       | HYPER             | 1497       | CGI_10025861 | 5' of gene          | O42603 | Corticotropin-releasing factor receptor 2                     | 1.00E-35  |
+| scaffold748_187113      | HYPER             | 387        | CGI_10012645 | 5' of gene          | P43143 | Neuronal acetylcholine receptor subunit alpha-6               | 9.00E-53  |
+| scaffold759_29417       | HYPER             | 365        | CGI_10010773 | exon/intron         | Q8BV66 | Interferon-induced protein 44                                 | 2.00E-30  |
+| scaffold759_32132       | HYPER             | 645        | CGI_10010773 | exon/intron         | Q8BV66 | Interferon-induced protein 44                                 | 2.00E-30  |
+| scaffold801_257945      | HYPER             | 243        | CGI_10024081 | intron              | Q0MQI4 | NADH dehydrogenase [ubiquinone] flavoprotein 1, mitochondrial | 0         |
+| scaffold82_242904       | HYPER             | 384        | CGI_10025251 | exon/intron         | Q8C3X4 | Translation factor Guf1, mitochondrial                        | 0         |
+| scaffold1017_117844     | HYPO              | 522        | CGI_10024982 | intron              | P45844 | ATP-binding cassette sub-family G member 1                    | 0         |
+| scaffold1017_120083     | HYPO              | 627        | CGI_10024982 | intron              | P45844 | ATP-binding cassette sub-family G member 1                    | 0         |
+| scaffold1409_145389     | HYPO              | 267        | CGI_10013783 | intron              | Q8TDB6 | E3 ubiquitin-protein ligase DTX3L                             | 1.00E-52  |
+| scaffold146_686526      | HYPO              | 1260       | CGI_10024919 | 3x exon/intron/exon | Q39575 | Dynein gamma chain, flagellar outer arm                       | 6.00E-173 |
+| scaffold1532_587965     | HYPO              | 493        | CGI_10028257 | exon                | P35404 | 5-hydroxytryptamine receptor 1B                               | 1.00E-37  |
+| scaffold1719_328529     | HYPO              | 519        | CGI_10014288 | exon                | Q56A24 | Kelch-like protein 24                                         | 1.00E-30  |
+| scaffold383_150405      | HYPO              | 285        | CGI_10023522 | intron              | Q5XJ54 | Glutaredoxin 3                                                | 2.00E-142 |
+| scaffold39470_52746     | HYPO              | 264        | CGI_10003381 | 5' of gene          | Q05AM5 | Elongator complex protein 2                                   | 0         |
+| scaffold39522_865       | HYPO              | 267        | CGI_10003390 | intron              | Q95KI5 | Solute carrier family 45 member 3                             | 3.00E-43  |
+| scaffold39990_18801     | HYPO              | 375        | CGI_10003762 | exon                | A5YM72 | Carnosine synthase 1                                          | 2.00E-139 |
+| scaffold40050_47357     | HYPO              | 675        | CGI_10003808 | 2x exon/intron/exon | P41512 | DNA topoisomerase 1                                           | 6.00E-48  |
+| scaffold41480_32925     | HYPO              | 391        | CGI_10005126 | intron              | Q9ULV0 | Myosin-Vb                                                     | 0         |
+| scaffold41540_110085    | HYPO              | 615        | CGI_10005248 | intron              | P28799 | Granulins                                                     | 2.00E-148 |
+| scaffold42486_5161      | HYPO              | 255        | CGI_10006974 | intron              | Q501L1 | Peptidase M20 domain-containing protein 2                     | 2.00E-103 |
+| scaffold42866_71933     | HYPO              | 613        | CGI_10007991 | intron              | D8VNS7 | Ryncolin-1                                                    | 3.00E-53  |
+| scaffold44098_294746    | HYPO              | 619        | CGI_10017713 | intron              | Q5U597 | Src kinase-associated phosphoprotein 2-B                      | 3.00E-33  |
+| scaffold471_10813       | HYPO              | 377        | CGI_10026995 | intron              | O88572 | Low-density lipoprotein receptor-related protein 6            | 7.00E-35  |
+| scaffold471_12059       | HYPO              | 363        | CGI_10026995 | exon                | O88572 | Low-density lipoprotein receptor-related protein 6            | 7.00E-35  |
