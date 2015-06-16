@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<!-- saved from url=(0087)http://rstudio-pubs-static.s3.amazonaws.com/14263_301f749741854349a4b14494cc3b01ac.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta http-equiv="x-ua-compatible" content="IE=9">
+
+<title>MG_Ringo_array.R</title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+<!-- Styles for R syntax highlighter -->
+<style type="text/css">
+   pre .operator,
+   pre .paren {
+     color: rgb(104, 118, 135)
+   }
+
+   pre .literal {
+     color: rgb(88, 72, 246)
+   }
+
+   pre .number {
+     color: rgb(0, 0, 205);
+   }
+
+   pre .comment {
+     color: rgb(76, 136, 107);
+   }
+
+   pre .keyword {
+     color: rgb(0, 0, 255);
+   }
+
+   pre .identifier {
+     color: rgb(0, 0, 0);
+   }
+
+   pre .string {
+     color: rgb(3, 106, 7);
+   }
+</style>
+
+<!-- R syntax highlighter -->
+<script type="text/javascript">
+var hljs=new function(){function m(p){return p.replace(/&/gm,"&amp;").replace(/</gm,"&lt;")}function f(r,q,p){return RegExp(q,"m"+(r.cI?"i":"")+(p?"g":""))}function b(r){for(var p=0;p<r.childNodes.length;p++){var q=r.childNodes[p];if(q.nodeName=="CODE"){return q}if(!(q.nodeType==3&&q.nodeValue.match(/\s+/))){break}}}function h(t,s){var p="";for(var r=0;r<t.childNodes.length;r++){if(t.childNodes[r].nodeType==3){var q=t.childNodes[r].nodeValue;if(s){q=q.replace(/\n/g,"")}p+=q}else{if(t.childNodes[r].nodeName=="BR"){p+="\n"}else{p+=h(t.childNodes[r])}}}if(/MSIE [678]/.test(navigator.userAgent)){p=p.replace(/\r/g,"\n")}return p}function a(s){var r=s.className.split(/\s+/);r=r.concat(s.parentNode.className.split(/\s+/));for(var q=0;q<r.length;q++){var p=r[q].replace(/^language-/,"");if(e[p]){return p}}}function c(q){var p=[];(function(s,t){for(var r=0;r<s.childNodes.length;r++){if(s.childNodes[r].nodeType==3){t+=s.childNodes[r].nodeValue.length}else{if(s.childNodes[r].nodeName=="BR"){t+=1}else{if(s.childNodes[r].nodeType==1){p.push({event:"start",offset:t,node:s.childNodes[r]});t=arguments.callee(s.childNodes[r],t);p.push({event:"stop",offset:t,node:s.childNodes[r]})}}}}return t})(q,0);return p}function k(y,w,x){var q=0;var z="";var s=[];function u(){if(y.length&&w.length){if(y[0].offset!=w[0].offset){return(y[0].offset<w[0].offset)?y:w}else{return w[0].event=="start"?y:w}}else{return y.length?y:w}}function t(D){var A="<"+D.nodeName.toLowerCase();for(var B=0;B<D.attributes.length;B++){var C=D.attributes[B];A+=" "+C.nodeName.toLowerCase();if(C.value!==undefined&&C.value!==false&&C.value!==null){A+='="'+m(C.value)+'"'}}return A+">"}while(y.length||w.length){var v=u().splice(0,1)[0];z+=m(x.substr(q,v.offset-q));q=v.offset;if(v.event=="start"){z+=t(v.node);s.push(v.node)}else{if(v.event=="stop"){var p,r=s.length;do{r--;p=s[r];z+=("</"+p.nodeName.toLowerCase()+">")}while(p!=v.node);s.splice(r,1);while(r<s.length){z+=t(s[r]);r++}}}}return z+m(x.substr(q))}function j(){function q(x,y,v){if(x.compiled){return}var u;var s=[];if(x.k){x.lR=f(y,x.l||hljs.IR,true);for(var w in x.k){if(!x.k.hasOwnProperty(w)){continue}if(x.k[w] instanceof Object){u=x.k[w]}else{u=x.k;w="keyword"}for(var r in u){if(!u.hasOwnProperty(r)){continue}x.k[r]=[w,u[r]];s.push(r)}}}if(!v){if(x.bWK){x.b="\\b("+s.join("|")+")\\s"}x.bR=f(y,x.b?x.b:"\\B|\\b");if(!x.e&&!x.eW){x.e="\\B|\\b"}if(x.e){x.eR=f(y,x.e)}}if(x.i){x.iR=f(y,x.i)}if(x.r===undefined){x.r=1}if(!x.c){x.c=[]}x.compiled=true;for(var t=0;t<x.c.length;t++){if(x.c[t]=="self"){x.c[t]=x}q(x.c[t],y,false)}if(x.starts){q(x.starts,y,false)}}for(var p in e){if(!e.hasOwnProperty(p)){continue}q(e[p].dM,e[p],true)}}function d(B,C){if(!j.called){j();j.called=true}function q(r,M){for(var L=0;L<M.c.length;L++){if((M.c[L].bR.exec(r)||[null])[0]==r){return M.c[L]}}}function v(L,r){if(D[L].e&&D[L].eR.test(r)){return 1}if(D[L].eW){var M=v(L-1,r);return M?M+1:0}return 0}function w(r,L){return L.i&&L.iR.test(r)}function K(N,O){var M=[];for(var L=0;L<N.c.length;L++){M.push(N.c[L].b)}var r=D.length-1;do{if(D[r].e){M.push(D[r].e)}r--}while(D[r+1].eW);if(N.i){M.push(N.i)}return f(O,M.join("|"),true)}function p(M,L){var N=D[D.length-1];if(!N.t){N.t=K(N,E)}N.t.lastIndex=L;var r=N.t.exec(M);return r?[M.substr(L,r.index-L),r[0],false]:[M.substr(L),"",true]}function z(N,r){var L=E.cI?r[0].toLowerCase():r[0];var M=N.k[L];if(M&&M instanceof Array){return M}return false}function F(L,P){L=m(L);if(!P.k){return L}var r="";var O=0;P.lR.lastIndex=0;var M=P.lR.exec(L);while(M){r+=L.substr(O,M.index-O);var N=z(P,M);if(N){x+=N[1];r+='<span class="'+N[0]+'">'+M[0]+"</span>"}else{r+=M[0]}O=P.lR.lastIndex;M=P.lR.exec(L)}return r+L.substr(O,L.length-O)}function J(L,M){if(M.sL&&e[M.sL]){var r=d(M.sL,L);x+=r.keyword_count;return r.value}else{return F(L,M)}}function I(M,r){var L=M.cN?'<span class="'+M.cN+'">':"";if(M.rB){y+=L;M.buffer=""}else{if(M.eB){y+=m(r)+L;M.buffer=""}else{y+=L;M.buffer=r}}D.push(M);A+=M.r}function G(N,M,Q){var R=D[D.length-1];if(Q){y+=J(R.buffer+N,R);return false}var P=q(M,R);if(P){y+=J(R.buffer+N,R);I(P,M);return P.rB}var L=v(D.length-1,M);if(L){var O=R.cN?"</span>":"";if(R.rE){y+=J(R.buffer+N,R)+O}else{if(R.eE){y+=J(R.buffer+N,R)+O+m(M)}else{y+=J(R.buffer+N+M,R)+O}}while(L>1){O=D[D.length-2].cN?"</span>":"";y+=O;L--;D.length--}var r=D[D.length-1];D.length--;D[D.length-1].buffer="";if(r.starts){I(r.starts,"")}return R.rE}if(w(M,R)){throw"Illegal"}}var E=e[B];var D=[E.dM];var A=0;var x=0;var y="";try{var s,u=0;E.dM.buffer="";do{s=p(C,u);var t=G(s[0],s[1],s[2]);u+=s[0].length;if(!t){u+=s[1].length}}while(!s[2]);if(D.length>1){throw"Illegal"}return{r:A,keyword_count:x,value:y}}catch(H){if(H=="Illegal"){return{r:0,keyword_count:0,value:m(C)}}else{throw H}}}function g(t){var p={keyword_count:0,r:0,value:m(t)};var r=p;for(var q in e){if(!e.hasOwnProperty(q)){continue}var s=d(q,t);s.language=q;if(s.keyword_count+s.r>r.keyword_count+r.r){r=s}if(s.keyword_count+s.r>p.keyword_count+p.r){r=p;p=s}}if(r.language){p.second_best=r}return p}function i(r,q,p){if(q){r=r.replace(/^((<[^>]+>|\t)+)/gm,function(t,w,v,u){return w.replace(/\t/g,q)})}if(p){r=r.replace(/\n/g,"<br>")}return r}function n(t,w,r){var x=h(t,r);var v=a(t);var y,s;if(v){y=d(v,x)}else{return}var q=c(t);if(q.length){s=document.createElement("pre");s.innerHTML=y.value;y.value=k(q,c(s),x)}y.value=i(y.value,w,r);var u=t.className;if(!u.match("(\\s|^)(language-)?"+v+"(\\s|$)")){u=u?(u+" "+v):v}if(/MSIE [678]/.test(navigator.userAgent)&&t.tagName=="CODE"&&t.parentNode.tagName=="PRE"){s=t.parentNode;var p=document.createElement("div");p.innerHTML="<pre><code>"+y.value+"</code></pre>";t=p.firstChild.firstChild;p.firstChild.cN=s.cN;s.parentNode.replaceChild(p.firstChild,s)}else{t.innerHTML=y.value}t.className=u;t.result={language:v,kw:y.keyword_count,re:y.r};if(y.second_best){t.second_best={language:y.second_best.language,kw:y.second_best.keyword_count,re:y.second_best.r}}}function o(){if(o.called){return}o.called=true;var r=document.getElementsByTagName("pre");for(var p=0;p<r.length;p++){var q=b(r[p]);if(q){n(q,hljs.tabReplace)}}}function l(){if(window.addEventListener){window.addEventListener("DOMContentLoaded",o,false);window.addEventListener("load",o,false)}else{if(window.attachEvent){window.attachEvent("onload",o)}else{window.onload=o}}}var e={};this.LANGUAGES=e;this.highlight=d;this.highlightAuto=g;this.fixMarkup=i;this.highlightBlock=n;this.initHighlighting=o;this.initHighlightingOnLoad=l;this.IR="[a-zA-Z][a-zA-Z0-9_]*";this.UIR="[a-zA-Z_][a-zA-Z0-9_]*";this.NR="\\b\\d+(\\.\\d+)?";this.CNR="\\b(0[xX][a-fA-F0-9]+|(\\d+(\\.\\d*)?|\\.\\d+)([eE][-+]?\\d+)?)";this.BNR="\\b(0b[01]+)";this.RSR="!|!=|!==|%|%=|&|&&|&=|\\*|\\*=|\\+|\\+=|,|\\.|-|-=|/|/=|:|;|<|<<|<<=|<=|=|==|===|>|>=|>>|>>=|>>>|>>>=|\\?|\\[|\\{|\\(|\\^|\\^=|\\||\\|=|\\|\\||~";this.ER="(?![\\s\\S])";this.BE={b:"\\\\.",r:0};this.ASM={cN:"string",b:"'",e:"'",i:"\\n",c:[this.BE],r:0};this.QSM={cN:"string",b:'"',e:'"',i:"\\n",c:[this.BE],r:0};this.CLCM={cN:"comment",b:"//",e:"$"};this.CBLCLM={cN:"comment",b:"/\\*",e:"\\*/"};this.HCM={cN:"comment",b:"#",e:"$"};this.NM={cN:"number",b:this.NR,r:0};this.CNM={cN:"number",b:this.CNR,r:0};this.BNM={cN:"number",b:this.BNR,r:0};this.inherit=function(r,s){var p={};for(var q in r){p[q]=r[q]}if(s){for(var q in s){p[q]=s[q]}}return p}}();hljs.LANGUAGES.cpp=function(){var a={keyword:{"false":1,"int":1,"float":1,"while":1,"private":1,"char":1,"catch":1,"export":1,virtual:1,operator:2,sizeof:2,dynamic_cast:2,typedef:2,const_cast:2,"const":1,struct:1,"for":1,static_cast:2,union:1,namespace:1,unsigned:1,"long":1,"throw":1,"volatile":2,"static":1,"protected":1,bool:1,template:1,mutable:1,"if":1,"public":1,friend:2,"do":1,"return":1,"goto":1,auto:1,"void":2,"enum":1,"else":1,"break":1,"new":1,extern:1,using:1,"true":1,"class":1,asm:1,"case":1,typeid:1,"short":1,reinterpret_cast:2,"default":1,"double":1,register:1,explicit:1,signed:1,typename:1,"try":1,"this":1,"switch":1,"continue":1,wchar_t:1,inline:1,"delete":1,alignof:1,char16_t:1,char32_t:1,constexpr:1,decltype:1,noexcept:1,nullptr:1,static_assert:1,thread_local:1,restrict:1,_Bool:1,complex:1},built_in:{std:1,string:1,cin:1,cout:1,cerr:1,clog:1,stringstream:1,istringstream:1,ostringstream:1,auto_ptr:1,deque:1,list:1,queue:1,stack:1,vector:1,map:1,set:1,bitset:1,multiset:1,multimap:1,unordered_set:1,unordered_map:1,unordered_multiset:1,unordered_multimap:1,array:1,shared_ptr:1}};return{dM:{k:a,i:"</",c:[hljs.CLCM,hljs.CBLCLM,hljs.QSM,{cN:"string",b:"'\\\\?.",e:"'",i:"."},{cN:"number",b:"\\b(\\d+(\\.\\d*)?|\\.\\d+)(u|U|l|L|ul|UL|f|F)"},hljs.CNM,{cN:"preprocessor",b:"#",e:"$"},{cN:"stl_container",b:"\\b(deque|list|queue|stack|vector|map|set|bitset|multiset|multimap|unordered_map|unordered_set|unordered_multiset|unordered_multimap|array)\\s*<",e:">",k:a,r:10,c:["self"]}]}}}();hljs.LANGUAGES.r={dM:{c:[hljs.HCM,{cN:"number",b:"\\b0[xX][0-9a-fA-F]+[Li]?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+(?:[eE][+\\-]?\\d*)?L\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+\\.(?!\\d)(?:i\\b)?",e:hljs.IMMEDIATE_RE,r:1},{cN:"number",b:"\\b\\d+(?:\\.\\d*)?(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\.\\d+(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"keyword",b:"(?:tryCatch|library|setGeneric|setGroupGeneric)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\.",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\d+(?![\\w.])",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\b(?:function)",e:hljs.IMMEDIATE_RE,r:2},{cN:"keyword",b:"(?:if|in|break|next|repeat|else|for|return|switch|while|try|stop|warning|require|attach|detach|source|setMethod|setClass)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"literal",b:"(?:NA|NA_integer_|NA_real_|NA_character_|NA_complex_)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"literal",b:"(?:NULL|TRUE|FALSE|T|F|Inf|NaN)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"identifier",b:"[a-zA-Z.][a-zA-Z0-9._]*\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"<\\-(?!\\s*\\d)",e:hljs.IMMEDIATE_RE,r:2},{cN:"operator",b:"\\->|<\\-",e:hljs.IMMEDIATE_RE,r:1},{cN:"operator",b:"%%|~",e:hljs.IMMEDIATE_RE},{cN:"operator",b:">=|<=|==|!=|\\|\\||&&|=|\\+|\\-|\\*|/|\\^|>|<|!|&|\\||\\$|:",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"%",e:"%",i:"\\n",r:1},{cN:"identifier",b:"`",e:"`",r:0},{cN:"string",b:'"',e:'"',c:[hljs.BE],r:0},{cN:"string",b:"'",e:"'",c:[hljs.BE],r:0},{cN:"paren",b:"[[({\\])}]",e:hljs.IMMEDIATE_RE,r:0}]}};
+hljs.initHighlightingOnLoad();
+</script>
+
+
+
+
+</head>
+
+<body>
+<!-- Automatically generated by RStudio [12861c30b10411e1afa60800200c9a66] -->
+
+<h3>MG_Ringo_array.R</h3>
+
+<p>mgavery — <em>Mar 11, 2014, 1:14 PM</em></p>
+
+<pre><code class="r"><span class="keyword">source</span><span class="paren">(</span><span class="string">"http://bioconductor.org/biocLite.R"</span><span class="paren">)</span>
+</code></pre>
+
+<pre><code>Bioconductor version 2.13 (BiocInstaller 1.12.0), ?biocLite for help
+</code></pre>
+
+<pre><code class="r"><span class="keyword">library</span><span class="paren">(</span><span class="identifier">Ringo</span><span class="paren">)</span>
+</code></pre>
+
+<pre><code>Loading required package: Biobase
+Loading required package: BiocGenerics
+Loading required package: parallel
+
+Attaching package: 'BiocGenerics'
+
+The following objects are masked from 'package:parallel':
+
+    clusterApply, clusterApplyLB, clusterCall, clusterEvalQ,
+    clusterExport, clusterMap, parApply, parCapply, parLapply,
+    parLapplyLB, parRapply, parSapply, parSapplyLB
+
+The following object is masked from 'package:stats':
+
+    xtabs
+
+The following objects are masked from 'package:base':
+
+    anyDuplicated, append, as.data.frame, as.vector, cbind,
+    colnames, duplicated, eval, evalq, Filter, Find, get,
+    intersect, is.unsorted, lapply, Map, mapply, match, mget,
+    order, paste, pmax, pmax.int, pmin, pmin.int, Position, rank,
+    rbind, Reduce, rep.int, rownames, sapply, setdiff, sort,
+    table, tapply, union, unique, unlist
+
+Welcome to Bioconductor
+
+    Vignettes contain introductory material; view with
+    'browseVignettes()'. To cite Bioconductor, see
+    'citation("Biobase")', and for packages 'citation("pkgname")'.
+
+Loading required package: RColorBrewer
+Loading required package: limma
+
+Attaching package: 'limma'
+
+The following object is masked from 'package:BiocGenerics':
+
+    plotMA
+
+Loading required package: Matrix
+Loading required package: grid
+Loading required package: lattice
+</code></pre>
+
+<pre><code class="r"><span class="keyword">library</span><span class="paren">(</span><span class="identifier">ChIPpeakAnno</span><span class="paren">)</span>
+</code></pre>
+
+<pre><code>Loading required package: VennDiagram
+Loading required package: biomaRt
+Loading required package: multtest
+Loading required package: IRanges
+
+Attaching package: 'IRanges'
+
+The following object is masked from 'package:Matrix':
+
+    expand
+
+Loading required package: Biostrings
+Loading required package: XVector
+Loading required package: BSgenome
+Loading required package: GenomicRanges
+
+Attaching package: 'GenomicRanges'
+
+The following objects are masked from 'package:Ringo':
+
+    genome, genome&lt;-
+
+Loading required package: BSgenome.Ecoli.NCBI.20080805
+Loading required package: GO.db
+Loading required package: AnnotationDbi
+
+Attaching package: 'AnnotationDbi'
+
+The following object is masked from 'package:BSgenome':
+
+    species
+
+Loading required package: DBI
+
+Loading required package: org.Hs.eg.db
+
+Loading required package: GenomicFeatures
+</code></pre>
+
+<pre><code class="r"><span class="keyword">library</span><span class="paren">(</span><span class="identifier">rtracklayer</span><span class="paren">)</span>
+
+<span class="comment">#1st step from Ryan's code is to generate annotation object --what is an annotation object?:</span>
+<span class="comment">#this command takes a Nimblegen POS file a tab delim which </span>
+<span class="comment">#maps each probe to it's position in the reference genome</span>
+<span class="comment">#we received these files on a CD with the slides - I've saved them here -&gt; http://eagle.fish.washington.edu/bivalvia/index.php?dir=array%2Fnimblegen%2F</span>
+<span class="comment">#ok, got it - going to run Ryan's code, but save into my own folder (added the verbose=F so it doesn't write out the whole file in the console)</span>
+<span class="comment">#...note: once this file is made once it can always be reference going forward, if you want to use the file Ryan made and sent, it's here -&gt; http://eagle.fish.washington.edu/bivalvia/index.php?dir=array%2Fnimblegen%2F</span>
+<span class="comment">#probeAnno&lt;-posToProbeAnno("121101_OysterV9_MG_meth.pos", genome="Pacific Oyster", microarrayPlatform="NimbleGen 121101 Oyster V9 MG meth",verbose = FALSE)</span>
+<span class="comment">#save(probeAnno,file="121101_OysterV9_MG_meth.ProbeAnnotation_MG.rda")</span>
+
+<span class="comment">#load annotation object - the file Ryan made</span>
+<span class="identifier">setwd</span><span class="paren">(</span><span class="string">"/Volumes/web/bivalvia/array/Rstuff"</span><span class="paren">)</span>
+<span class="identifier">load</span><span class="paren">(</span><span class="string">"121101_OysterV9_MG_meth.ProbeAnnotation.rda"</span><span class="paren">)</span>
+
+<span class="comment">#load gff</span>
+<span class="identifier">gff</span><span class="operator">&lt;-</span><span class="identifier">read.delim</span><span class="paren">(</span><span class="string">"oyster.v9.glean.final.rename.mRNA.gff"</span>, <span class="identifier">header</span><span class="operator">=</span><span class="literal">F</span><span class="paren">)</span>
+<span class="identifier">head</span> <span class="paren">(</span><span class="identifier">gff</span><span class="paren">)</span>
+</code></pre>
+
+<pre><code>      V1    V2   V3  V4  V5     V6 V7 V8               V9
+1 C16582 GLEAN mRNA  35 385 0.5559  -  . ID=CGI_10000001;
+2 C17212 GLEAN mRNA  31 363 0.9996  +  . ID=CGI_10000002;
+3 C17316 GLEAN mRNA  30 257 0.5559  +  . ID=CGI_10000003;
+4 C17476 GLEAN mRNA  34 257 0.9989  -  . ID=CGI_10000004;
+5 C17998 GLEAN mRNA 196 387 1.0000  -  . ID=CGI_10000005;
+6 C18346 GLEAN mRNA 174 551 1.0000  +  . ID=CGI_10000009;
+</code></pre>
+
+<pre><code class="r"><span class="identifier">names</span><span class="paren">(</span><span class="identifier">gff</span><span class="paren">)</span><span class="operator">&lt;-</span><span class="identifier">c</span><span class="paren">(</span><span class="string">"chr"</span>,<span class="string">"source"</span>,<span class="string">"type"</span>,<span class="string">"start"</span>,<span class="string">"end"</span>,<span class="string">"score"</span>,<span class="string">"strand"</span>,<span class="string">"phase"</span>,<span class="string">"name"</span><span class="paren">)</span>
+
+<span class="comment">#Ryan's annotation of this step: 'read in altered targets file such that the control samlpe is in the denominator slot (Cy3)'</span>
+<span class="comment">#I'm not sure of the necessity of the date thing...</span>
+<span class="identifier">todaysDate</span><span class="operator">&lt;-</span><span class="identifier">substr</span><span class="paren">(</span><span class="identifier">format</span><span class="paren">(</span><span class="identifier">Sys.time</span><span class="paren">(</span><span class="paren">)</span>, <span class="string">"%Y.%m.%d."</span><span class="paren">)</span>,<span class="number">1</span>,<span class="number">11</span><span class="paren">)</span>
+<span class="comment">#The help for readNimblegen function says it's a function to read in Ng intensity text files into an RGlist</span>
+<span class="comment">#Ryan provided a 'spottypes' file and 'targets' file in a folder called 'pair' , the intensity files also need to be in here (see path argument) - </span>
+<span class="comment">#spot types are made or read by limma, I think targets is too.  I need to ask him about this a little more..</span>
+<span class="comment">#I took the pair files from the raw data from Cassie in the 'Oyster Array' folder, and put them in the 'pair' folder with the spot files and target types</span>
+<span class="comment">#renamed them to be consistent with Ryan's naming convention in the Target file</span>
+<span class="identifier">RG</span><span class="operator">&lt;-</span><span class="identifier">readNimblegen</span><span class="paren">(</span><span class="string">"2013.09.24.targets.txt"</span>, <span class="string">"spottypes.txt"</span>, <span class="identifier">headerPattern</span><span class="operator">=</span><span class="string">"# software=DEVA"</span>, <span class="identifier">path</span><span class="operator">=</span><span class="string">"pair"</span><span class="paren">)</span>
+</code></pre>
+
+<pre><code>Reading targets file...
+Reading raw intensities...
+Read header information
+Read pair/A01_Ctrl.input_635.pair 
+Read pair/A01_EE2.input_532.pair 
+Read pair/A02_Ctrl.MBD_635.pair 
+Read pair/A02_EE2.MBD_532.pair 
+Read pair/A03_Ctrl.MBD_532.pair 
+Read pair/A03_EE2.MBD_635.pair 
+Determining probe categories...
+Matching patterns for: GENE_EXPR_OPTION PROBE_ID 
+Found 697752 BLOCK1 
+Found 23835 RANDOM 
+Setting attributes: values Color 
+</code></pre>
+
+<pre><code class="r"><span class="identifier">save</span><span class="paren">(</span><span class="identifier">RG</span>, <span class="identifier">file</span><span class="operator">=</span><span class="string">"2014.03.03.RG.rda"</span><span class="paren">)</span>
+<span class="comment">#load a dataset written with the function save</span>
+<span class="identifier">load</span><span class="paren">(</span><span class="string">"2014.03.03.RG.rda"</span><span class="paren">)</span>
+<span class="comment">#This step removes control probes (labeled as RANDOM (versus BLOCK1))</span>
+<span class="identifier">RG</span><span class="operator">&lt;-</span><span class="identifier">RG</span><span class="paren">[</span><span class="identifier">RG</span><span class="operator">$</span><span class="identifier">gene</span><span class="operator">$</span><span class="identifier">Status</span> <span class="operator">!=</span> <span class="string">"RANDOM"</span>,<span class="paren">]</span>
+
+<span class="comment">#Preprocessing - taking raw probe intensities into (background corrected) normalized log ratios (M-values), using the loess normalization (note the first round of analysis used the 'nimblegen' method - should see why they changed but I do know there are fewer sites with the loess)</span>
+<span class="identifier">NG</span><span class="operator">&lt;-</span><span class="identifier">preprocess</span><span class="paren">(</span><span class="identifier">RG</span>,<span class="identifier">method</span><span class="operator">=</span><span class="string">"loess"</span><span class="paren">)</span>
+</code></pre>
+
+<pre><code>Normalizing...
+</code></pre>
+
+<pre><code class="r"><span class="comment">#renames the samples to be "targetIDnumerator_vs_targetIDdemoninator"</span>
+<span class="identifier">sampleNames</span><span class="paren">(</span><span class="identifier">NG</span><span class="paren">)</span> <span class="operator">&lt;-</span><span class="identifier">with</span><span class="paren">(</span><span class="identifier">RG</span><span class="operator">$</span><span class="identifier">targets</span>, <span class="identifier">paste</span><span class="paren">(</span><span class="identifier">FileNameCy5</span>,<span class="string">"vs"</span>,<span class="identifier">FileNameCy3</span>,<span class="identifier">sep</span><span class="operator">=</span><span class="string">"_"</span><span class="paren">)</span><span class="paren">)</span>
+
+<span class="comment">#Ryan's annotation: ProbeIDs all have ":+:" in their names, which has been converted to "..." when the preprocess function is run.  This is in conflict</span>
+<span class="comment">#with the probeAnno</span>
+<span class="identifier">row.names</span><span class="paren">(</span><span class="identifier">exprs</span><span class="paren">(</span><span class="identifier">NG</span><span class="paren">)</span><span class="paren">)</span><span class="operator">&lt;-</span><span class="identifier">gsub</span><span class="paren">(</span><span class="string">"..."</span>,<span class="string">":+:"</span>,<span class="identifier">row.names</span><span class="paren">(</span><span class="identifier">exprs</span><span class="paren">(</span><span class="identifier">NG</span><span class="paren">)</span><span class="paren">)</span>, <span class="identifier">fixed</span><span class="operator">=</span><span class="literal">TRUE</span><span class="paren">)</span>
+
+<span class="comment">#smooth probe intensities</span>
+<span class="comment">#computes running medians on tiling expression sets, arguements include the normalized file, the probe anno made earlier, the column that has the 'phenoData' </span>
+<span class="comment">#win half size says this: Half the size of the window centered at a probe position, in which all other probes contribute to the calculation of the median.need to ask about this one</span>
+<span class="comment">#in Ryan's original code the winHalfSize was 500 (full size 1000).  When they did the reananlysis the window size was changed to 600, so I changed this to 300</span>
+<span class="identifier">smoothNG</span><span class="operator">&lt;-</span><span class="identifier">computeRunningMedians</span><span class="paren">(</span><span class="identifier">NG</span>,<span class="identifier">probeAnno</span><span class="operator">=</span><span class="identifier">probeAnno</span>, <span class="identifier">modColumn</span><span class="operator">=</span><span class="string">"FileNameCy5"</span>, <span class="identifier">winHalfSize</span><span class="operator">=</span><span class="number">300</span>,<span class="identifier">verbose</span> <span class="operator">=</span> <span class="literal">FALSE</span><span class="paren">)</span>
+
+
+<span class="comment">###########Not running this next section, but I'm going to leave it in since this is how the original analysis was done.  Ryan and Jeff then suggested more conservative threshold:</span>
+<span class="comment">###########thresholds for the final analysis: 2 fold change (log2(2) =1) for A02 and A03, and a less stringent threshold of 1.4 fold change in A01 (log2(1.4)=0.485)</span>
+<span class="comment">###########when I asked why different threshold this was response: A lower threshold was used for the input vs input (A01) sample in an attempt to identify the most robust DMRs.  When using the same threshold for all samples, there were a large number of DMRs in A02 and A03, where the same, but slightly weaker pattern of logFC values was found.  </span>
+<span class="comment">#the apply means applying functions over error margine, 2 indicates columns, </span>
+<span class="comment">#upperBoundNull is a function from Ringo - This function tries to pinpoint the minimum of data values (log2 ratios) that are more likely to arise from the alternative distribution, i.e. an upper bound for values following the null distribution.</span>
+<span class="comment">#in the final analysis these thresholds weren't used.  Instead, a more conservative pick of Use a threshold of 2 fold change (log2(2) =1) for A02 and A03, and a less stringent threshold of 1.4 fold change in A01 (log2(1.4)=0.485), </span>
+<span class="comment">#y0 &lt;- apply(exprs(smoothNG),2,upperBoundNull)</span>
+<span class="comment"># A01_EE2.input_532.pair_vs_A01_Ctrl.input_635.pair.sm     A02_EE2.MBD_532.pair_vs_A02_Ctrl.MBD_635.pair.sm </span>
+<span class="comment"># 0.6742440                                            0.6978518 </span>
+<span class="comment"># A03_EE2.MBD_635.pair_vs_A03_Ctrl.MBD_532.pair.sm </span>
+<span class="comment"># 0.7904904 </span>
+
+<span class="comment">#final threshold selection</span>
+<span class="identifier">y0</span> <span class="operator">&lt;-</span> <span class="identifier">c</span><span class="paren">(</span><span class="number">.485</span>,<span class="number">1</span>,<span class="number">1</span><span class="paren">)</span>
+
+<span class="comment">#'chers' are ChIP enriched regions, thisfirst one uses the smoothed probe intensities, the enviroment of mapping 'probe anno' and the thresholds for</span>
+<span class="comment">#for which you call something enriched, in this case it'sthe vcetor y0, which is the value of the upper bound of the null distribution - values above this are enriched, distCutOff is the</span>
+<span class="comment">#max #of bp at which enriched probes are condensed into 1 cher</span>
+<span class="identifier">chersNG</span> <span class="operator">&lt;-</span> <span class="identifier">findChersOnSmoothed</span><span class="paren">(</span><span class="identifier">smoothNG</span>, <span class="identifier">probeAnno</span><span class="operator">=</span><span class="identifier">probeAnno</span>, <span class="identifier">thresholds</span><span class="operator">=</span><span class="identifier">c</span><span class="paren">(</span><span class="identifier">y0</span><span class="paren">[</span><span class="number">1</span><span class="paren">]</span>,<span class="identifier">y0</span><span class="paren">[</span><span class="number">2</span><span class="paren">]</span>,<span class="identifier">y0</span><span class="paren">[</span><span class="number">3</span><span class="paren">]</span><span class="paren">)</span>, <span class="identifier">distCutOff</span><span class="operator">=</span><span class="number">600</span>, <span class="identifier">verbose</span> <span class="operator">=</span> <span class="literal">FALSE</span><span class="paren">)</span>
+
+<span class="comment">#this function relates found chers to annotated genomic features, such as transcripts</span>
+<span class="comment">#gff is the mRNA regions (see above when it was read in)</span>
+<span class="identifier">chersNG</span> <span class="operator">&lt;-</span> <span class="identifier">relateChers</span><span class="paren">(</span><span class="identifier">chersNG</span>, <span class="identifier">gff</span><span class="paren">)</span>
+</code></pre>
+
+<pre><code>Relating 4012 ChIP-enriched regions to GFF:
+1000  2000  3000  4000  
+</code></pre>
+
+<pre><code class="r"><span class="comment">#weird, this says called internally by other ringo functions, not normalled called by user</span>
+<span class="identifier">chersNGD</span> <span class="operator">&lt;-</span> <span class="identifier">as.data.frame.cherList</span><span class="paren">(</span><span class="identifier">chersNG</span><span class="paren">)</span>
+<span class="comment">#order them in decreasing order by max level</span>
+<span class="identifier">chersNGD</span><span class="operator">&lt;-</span><span class="identifier">chersNGD</span><span class="paren">[</span><span class="identifier">order</span><span class="paren">(</span><span class="identifier">chersNGD</span><span class="operator">$</span><span class="identifier">maxLevel</span>, <span class="identifier">decreasing</span><span class="operator">=</span><span class="literal">TRUE</span><span class="paren">)</span>,<span class="paren">]</span>
+<span class="identifier">nrow</span><span class="paren">(</span><span class="identifier">chersNGD</span><span class="paren">)</span> <span class="comment"># --number of chers #4012</span>
+</code></pre>
+
+<pre><code>[1] 4012
+</code></pre>
+
+<pre><code class="r">
+<span class="comment">#chers detected within each array</span>
+<span class="identifier">nrow</span><span class="paren">(</span><span class="identifier">chersNGD</span><span class="paren">[</span><span class="identifier">grep</span><span class="paren">(</span><span class="string">"A01"</span>,<span class="identifier">chersNGD</span><span class="operator">$</span><span class="identifier">name</span><span class="paren">)</span>,<span class="paren">]</span><span class="paren">)</span>   <span class="comment">#3036</span>
+</code></pre>
+
+<pre><code>[1] 3036
+</code></pre>
+
+<pre><code class="r"><span class="identifier">nrow</span><span class="paren">(</span><span class="identifier">chersNGD</span><span class="paren">[</span><span class="identifier">grep</span><span class="paren">(</span><span class="string">"A02"</span>,<span class="identifier">chersNGD</span><span class="operator">$</span><span class="identifier">name</span><span class="paren">)</span>,<span class="paren">]</span><span class="paren">)</span> <span class="comment">#448</span>
+</code></pre>
+
+<pre><code>[1] 448
+</code></pre>
+
+<pre><code class="r"><span class="identifier">nrow</span><span class="paren">(</span><span class="identifier">chersNGD</span><span class="paren">[</span><span class="identifier">grep</span><span class="paren">(</span><span class="string">"A03"</span>,<span class="identifier">chersNGD</span><span class="operator">$</span><span class="identifier">name</span><span class="paren">)</span>,<span class="paren">]</span><span class="paren">)</span> <span class="comment">#528</span>
+</code></pre>
+
+<pre><code>[1] 528
+</code></pre>
+
+<pre><code class="r">
+<span class="comment">###note: I will come back to this later if I have time, but skipping it for now</span>
+<span class="comment">##Ryan's annotation: try to write wig using the writeWIG function from Starr</span>
+<span class="comment">#library(Starr)</span>
+<span class="comment">#writeWIG(smoothNG[,1],probeAnno,file="2013.09.25.A01_smoothed.wig")</span>
+<span class="comment">#writeWIG(smoothNG[,2],probeAnno,file="2013.09.25.A02_smoothed.wig")</span>
+<span class="comment">#writeWIG(smoothNG[,3],probeAnno,file="2013.09.25.A03_smoothed.wig")</span>
+<span class="comment">##had to change NAs to 0s in order to load into IGV</span>
+
+<span class="comment">#find overlapping regions</span>
+<span class="comment">#create ranged data objects</span>
+<span class="comment">#looks like here it's repeating finding chers, but each assay (e.g. A01) is generated separately</span>
+<span class="identifier">chersA01</span> <span class="operator">&lt;-</span> <span class="identifier">findChersOnSmoothed</span><span class="paren">(</span><span class="identifier">smoothNG</span><span class="paren">[</span>,<span class="number">1</span><span class="paren">]</span>, <span class="identifier">probeAnno</span><span class="operator">=</span><span class="identifier">probeAnno</span>, <span class="identifier">thresholds</span><span class="operator">=</span><span class="identifier">c</span><span class="paren">(</span><span class="identifier">y0</span><span class="paren">[</span><span class="number">1</span><span class="paren">]</span><span class="paren">)</span>, <span class="identifier">distCutOff</span><span class="operator">=</span><span class="number">600</span>, <span class="identifier">verbose</span> <span class="operator">=</span> <span class="literal">FALSE</span><span class="paren">)</span>
+<span class="comment">#described above</span>
+<span class="identifier">chersA01</span> <span class="operator">&lt;-</span> <span class="identifier">relateChers</span><span class="paren">(</span><span class="identifier">chersA01</span>, <span class="identifier">gff</span><span class="paren">)</span>
+</code></pre>
+
+<pre><code>Relating 3036 ChIP-enriched regions to GFF:
+1000  2000  3000  
+</code></pre>
+
+<pre><code class="r"><span class="comment">#exports cherList into a file of gff or bed</span>
+<span class="identifier">exportCherList</span><span class="paren">(</span><span class="identifier">chersA01</span>,<span class="identifier">filename</span><span class="operator">=</span><span class="string">"2014.03.03.chers_A01_HYPER.bed"</span>,<span class="identifier">format</span><span class="operator">=</span><span class="string">"bed"</span>,<span class="identifier">genome</span><span class="operator">=</span><span class="string">"oyster"</span><span class="paren">)</span>
+<span class="comment">#read back in without header</span>
+<span class="identifier">bedA01</span><span class="operator">&lt;-</span><span class="identifier">read.delim</span><span class="paren">(</span><span class="string">"2014.03.03.chers_A01_HYPER.bed"</span>, <span class="identifier">header</span><span class="operator">=</span><span class="literal">F</span><span class="paren">)</span>
+<span class="comment">#generate a 6th column with '1' in every row -it's a default for strand column</span>
+<span class="identifier">bedA01</span><span class="operator">$</span><span class="identifier">V6</span><span class="operator">&lt;-</span><span class="number">1</span>
+<span class="comment">#this ranged data is some version of a reformatted bed</span>
+<span class="comment">#it's used later for findOverlapping peaks (I wonder why bedtools wouldn't be simpler for this?)</span>
+<span class="comment">#this is required for the later step</span>
+<span class="identifier">rangedA01</span><span class="operator">&lt;-</span><span class="identifier">BED2RangedData</span><span class="paren">(</span><span class="identifier">bedA01</span><span class="paren">)</span>
+
+<span class="comment">#doing the same thing for assay A02 and A03</span>
+<span class="identifier">chersA02</span> <span class="operator">&lt;-</span> <span class="identifier">findChersOnSmoothed</span><span class="paren">(</span><span class="identifier">smoothNG</span><span class="paren">[</span>,<span class="number">2</span><span class="paren">]</span>, <span class="identifier">probeAnno</span><span class="operator">=</span><span class="identifier">probeAnno</span>, <span class="identifier">thresholds</span><span class="operator">=</span><span class="identifier">c</span><span class="paren">(</span><span class="identifier">y0</span><span class="paren">[</span><span class="number">2</span><span class="paren">]</span><span class="paren">)</span>, <span class="identifier">distCutOff</span><span class="operator">=</span><span class="number">600</span>, <span class="identifier">verbose</span> <span class="operator">=</span> <span class="literal">FALSE</span><span class="paren">)</span>
+<span class="identifier">chersA02</span><span class="operator">&lt;-</span> <span class="identifier">relateChers</span><span class="paren">(</span><span class="identifier">chersA02</span>, <span class="identifier">gff</span><span class="paren">)</span>
+</code></pre>
+
+<pre><code>Relating 448 ChIP-enriched regions to GFF:
+</code></pre>
+
+<pre><code class="r"><span class="identifier">exportCherList</span><span class="paren">(</span><span class="identifier">chersA02</span>,<span class="identifier">filename</span><span class="operator">=</span><span class="string">"2014.03.03.chers_A02_HYPER.bed"</span>,<span class="identifier">format</span><span class="operator">=</span><span class="string">"bed"</span>,<span class="identifier">genome</span><span class="operator">=</span><span class="string">"oyster"</span><span class="paren">)</span>
+<span class="identifier">bedA02</span><span class="operator">&lt;-</span><span class="identifier">read.delim</span><span class="paren">(</span><span class="string">"2014.03.03.chers_A02_HYPER.bed"</span>, <span class="identifier">header</span><span class="operator">=</span><span class="literal">F</span><span class="paren">)</span>
+<span class="identifier">bedA02</span><span class="operator">$</span><span class="identifier">V6</span><span class="operator">&lt;-</span><span class="number">1</span>
+<span class="identifier">rangedA02</span><span class="operator">&lt;-</span><span class="identifier">BED2RangedData</span><span class="paren">(</span><span class="identifier">bedA02</span><span class="paren">)</span>
+
+<span class="identifier">chersA03</span> <span class="operator">&lt;-</span> <span class="identifier">findChersOnSmoothed</span><span class="paren">(</span><span class="identifier">smoothNG</span><span class="paren">[</span>,<span class="number">3</span><span class="paren">]</span>, <span class="identifier">probeAnno</span><span class="operator">=</span><span class="identifier">probeAnno</span>, <span class="identifier">thresholds</span><span class="operator">=</span><span class="identifier">c</span><span class="paren">(</span><span class="identifier">y0</span><span class="paren">[</span><span class="number">3</span><span class="paren">]</span><span class="paren">)</span>, <span class="identifier">distCutOff</span><span class="operator">=</span><span class="number">600</span>, <span class="identifier">verbose</span> <span class="operator">=</span> <span class="literal">FALSE</span><span class="paren">)</span>
+<span class="identifier">chersA03</span><span class="operator">&lt;-</span> <span class="identifier">relateChers</span><span class="paren">(</span><span class="identifier">chersA03</span>, <span class="identifier">gff</span><span class="paren">)</span>
+</code></pre>
+
+<pre><code>Relating 528 ChIP-enriched regions to GFF:
+</code></pre>
+
+<pre><code class="r"><span class="identifier">exportCherList</span><span class="paren">(</span><span class="identifier">chersA03</span>,<span class="identifier">filename</span><span class="operator">=</span><span class="string">"2014.03.03.chers_A03_HYPER.bed"</span>,<span class="identifier">format</span><span class="operator">=</span><span class="string">"bed"</span>,<span class="identifier">genome</span><span class="operator">=</span><span class="string">"oyster"</span><span class="paren">)</span>
+<span class="identifier">bedA03</span><span class="operator">&lt;-</span><span class="identifier">read.delim</span><span class="paren">(</span><span class="string">"2014.03.03.chers_A03_HYPER.bed"</span>, <span class="identifier">header</span><span class="operator">=</span><span class="literal">F</span><span class="paren">)</span>
+<span class="identifier">bedA03</span><span class="operator">$</span><span class="identifier">V6</span><span class="operator">&lt;-</span><span class="number">1</span>
+<span class="identifier">rangedA03</span><span class="operator">&lt;-</span><span class="identifier">BED2RangedData</span><span class="paren">(</span><span class="identifier">bedA03</span><span class="paren">)</span>
+
+<span class="comment">#generate objects that contain overlapping regions</span>
+<span class="comment">#this requires the 'ranged' data generated above</span>
+<span class="identifier">overlapA01.A02</span><span class="operator">&lt;-</span><span class="identifier">findOverlappingPeaks</span><span class="paren">(</span><span class="identifier">rangedA01</span>,<span class="identifier">rangedA02</span><span class="paren">)</span>
+<span class="identifier">overlapA01.A03</span><span class="operator">&lt;-</span><span class="identifier">findOverlappingPeaks</span><span class="paren">(</span><span class="identifier">rangedA01</span>,<span class="identifier">rangedA03</span><span class="paren">)</span>
+<span class="identifier">overlapA02.A03</span><span class="operator">&lt;-</span><span class="identifier">findOverlappingPeaks</span><span class="paren">(</span><span class="identifier">rangedA02</span>,<span class="identifier">rangedA03</span><span class="paren">)</span>
+
+<span class="comment">#number of overlapping peaks in each pairwise comparison</span>
+<span class="identifier">nrow</span><span class="paren">(</span><span class="identifier">overlapA01.A02</span><span class="operator">$</span><span class="identifier">OverlappingPeaks</span><span class="paren">)</span> <span class="comment">#397</span>
+</code></pre>
+
+<pre><code>[1] 397
+</code></pre>
+
+<pre><code class="r"><span class="identifier">nrow</span><span class="paren">(</span><span class="identifier">overlapA01.A03</span><span class="operator">$</span><span class="identifier">OverlappingPeaks</span><span class="paren">)</span> <span class="comment">#462</span>
+</code></pre>
+
+<pre><code>[1] 462
+</code></pre>
+
+<pre><code class="r"><span class="identifier">nrow</span><span class="paren">(</span><span class="identifier">overlapA02.A03</span><span class="operator">$</span><span class="identifier">OverlappingPeaks</span><span class="paren">)</span> <span class="comment">#353</span>
+</code></pre>
+
+<pre><code>[1] 353
+</code></pre>
+
+<pre><code class="r">
+<span class="comment">#This shows how multiple peaks in A02 are covered by 1 peak in A03. Here 346 regions of A02 overlap with A03, but 344 regions of A03 overlap with A02.</span>
+<span class="comment">#############</span>
+<span class="identifier">nrow</span><span class="paren">(</span><span class="identifier">rangedA02</span><span class="paren">)</span> <span class="comment">#448</span>
+</code></pre>
+
+<pre><code>[1] 448
+</code></pre>
+
+<pre><code class="r"><span class="identifier">A02peaksWithOverlapA03</span><span class="operator">&lt;-</span><span class="identifier">overlapA02.A03</span><span class="operator">$</span><span class="identifier">Peaks1withOverlaps</span>; <span class="identifier">nrow</span><span class="paren">(</span><span class="identifier">A02peaksWithOverlapA03</span><span class="paren">)</span> <span class="comment">#346</span>
+</code></pre>
+
+<pre><code>[1] 346
+</code></pre>
+
+<pre><code class="r"><span class="identifier">A02noOverlapWithA03</span><span class="operator">&lt;-</span><span class="identifier">rangedA02</span><span class="paren">[</span><span class="operator">!</span><span class="identifier">rownames</span><span class="paren">(</span><span class="identifier">rangedA02</span><span class="paren">)</span> <span class="operator">%in%</span> <span class="identifier">rownames</span><span class="paren">(</span><span class="identifier">A02peaksWithOverlapA03</span><span class="paren">)</span>,<span class="paren">]</span>; <span class="identifier">nrow</span><span class="paren">(</span><span class="identifier">A02noOverlapWithA03</span><span class="paren">)</span> <span class="comment">#102</span>
+</code></pre>
+
+<pre><code>[1] 102
+</code></pre>
+
+<pre><code class="r">
+<span class="identifier">nrow</span><span class="paren">(</span><span class="identifier">rangedA03</span><span class="paren">)</span> <span class="comment">#528</span>
+</code></pre>
+
+<pre><code>[1] 528
+</code></pre>
+
+<pre><code class="r"><span class="identifier">A03peaksWithOverlapA02</span><span class="operator">&lt;-</span><span class="identifier">overlapA02.A03</span><span class="operator">$</span><span class="identifier">Peaks2withOverlaps</span>; <span class="identifier">nrow</span><span class="paren">(</span><span class="identifier">A03peaksWithOverlapA02</span><span class="paren">)</span> <span class="comment">#344</span>
+</code></pre>
+
+<pre><code>[1] 344
+</code></pre>
+
+<pre><code class="r"><span class="identifier">A03noOverlapWithA02</span><span class="operator">&lt;-</span><span class="identifier">rangedA03</span><span class="paren">[</span><span class="operator">!</span><span class="identifier">rownames</span><span class="paren">(</span><span class="identifier">rangedA03</span><span class="paren">)</span> <span class="operator">%in%</span> <span class="identifier">rownames</span><span class="paren">(</span><span class="identifier">A03peaksWithOverlapA02</span><span class="paren">)</span>,<span class="paren">]</span>; <span class="identifier">nrow</span><span class="paren">(</span><span class="identifier">A03noOverlapWithA02</span><span class="paren">)</span> <span class="comment">#184</span>
+</code></pre>
+
+<pre><code>[1] 184
+</code></pre>
+
+<pre><code class="r"><span class="comment">################</span>
+
+<span class="comment">#Ryan's annotation: we now have overlapping and nonoverlapping chers between A02 and A03, what we want now, is to remove those chers that also overlap with A01 from each set</span>
+<span class="identifier">A02peaksWithOverlapA01</span><span class="operator">&lt;-</span><span class="identifier">overlapA01.A02</span><span class="operator">$</span><span class="identifier">Peaks2withOverlaps</span>; <span class="identifier">nrow</span><span class="paren">(</span><span class="identifier">A02peaksWithOverlapA01</span><span class="paren">)</span> <span class="comment">#394</span>
+</code></pre>
+
+<pre><code>[1] 394
+</code></pre>
+
+<pre><code class="r"><span class="identifier">A02peaksWithOverlapA03butNotA01</span><span class="operator">&lt;-</span><span class="identifier">A02peaksWithOverlapA03</span><span class="paren">[</span><span class="operator">!</span><span class="identifier">rownames</span><span class="paren">(</span><span class="identifier">A02peaksWithOverlapA03</span><span class="paren">)</span> <span class="operator">%in%</span> <span class="identifier">rownames</span><span class="paren">(</span><span class="identifier">A02peaksWithOverlapA01</span><span class="paren">)</span>,<span class="paren">]</span>; <span class="identifier">nrow</span><span class="paren">(</span><span class="identifier">A02peaksWithOverlapA03butNotA01</span><span class="paren">)</span> <span class="comment">#30</span>
+</code></pre>
+
+<pre><code>[1] 30
+</code></pre>
+
+<pre><code class="r">
+<span class="identifier">A03peaksWithOverlapA01</span><span class="operator">&lt;-</span><span class="identifier">overlapA01.A03</span><span class="operator">$</span><span class="identifier">Peaks2withOverlaps</span>; <span class="identifier">nrow</span><span class="paren">(</span><span class="identifier">A03peaksWithOverlapA01</span><span class="paren">)</span> <span class="comment">#461</span>
+</code></pre>
+
+<pre><code>[1] 461
+</code></pre>
+
+<pre><code class="r"><span class="identifier">A03peaksWithOverlapA02butNotA01</span><span class="operator">&lt;-</span><span class="identifier">A03peaksWithOverlapA02</span><span class="paren">[</span><span class="operator">!</span><span class="identifier">rownames</span><span class="paren">(</span><span class="identifier">A03peaksWithOverlapA02</span><span class="paren">)</span> <span class="operator">%in%</span> <span class="identifier">rownames</span><span class="paren">(</span><span class="identifier">A03peaksWithOverlapA01</span><span class="paren">)</span>,<span class="paren">]</span>; <span class="identifier">nrow</span><span class="paren">(</span><span class="identifier">A03peaksWithOverlapA02butNotA01</span><span class="paren">)</span> <span class="comment">#28</span>
+</code></pre>
+
+<pre><code>[1] 28
+</code></pre>
+
+<pre><code class="r">
+<span class="comment">#write RangedData to bed</span>
+<span class="comment">#Ryan's annotation: https://stat.ethz.ch/pipermail/bioconductor/2012-April/045050.html</span>
+<span class="identifier">write.table</span><span class="paren">(</span><span class="identifier">as.data.frame</span><span class="paren">(</span><span class="identifier">A02peaksWithOverlapA03butNotA01</span><span class="paren">)</span><span class="paren">[</span>,<span class="identifier">c</span><span class="paren">(</span><span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span><span class="paren">)</span><span class="paren">]</span>, <span class="identifier">file</span><span class="operator">=</span><span class="string">"2014.03.03.A02overlapA03_butNotA01_HYPER.bed"</span>,<span class="identifier">sep</span><span class="operator">=</span><span class="string">"\t"</span>,<span class="identifier">quote</span><span class="operator">=</span><span class="literal">F</span>,<span class="identifier">row.names</span><span class="operator">=</span><span class="literal">F</span>,<span class="identifier">col.names</span><span class="operator">=</span><span class="literal">F</span><span class="paren">)</span>
+<span class="identifier">write.table</span><span class="paren">(</span><span class="identifier">as.data.frame</span><span class="paren">(</span><span class="identifier">A03peaksWithOverlapA02butNotA01</span><span class="paren">)</span><span class="paren">[</span>,<span class="identifier">c</span><span class="paren">(</span><span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span><span class="paren">)</span><span class="paren">]</span>, <span class="identifier">file</span><span class="operator">=</span><span class="string">"2014.03.03.A03overlapA02_butNotA01_HYPER.bed"</span>,<span class="identifier">sep</span><span class="operator">=</span><span class="string">"\t"</span>,<span class="identifier">quote</span><span class="operator">=</span><span class="literal">F</span>,<span class="identifier">row.names</span><span class="operator">=</span><span class="literal">F</span>,<span class="identifier">col.names</span><span class="operator">=</span><span class="literal">F</span><span class="paren">)</span>
+
+<span class="comment">######################################################################################################################</span>
+<span class="comment"># Hypomethylation</span>
+
+<span class="comment">#flip the ratios on these such that we're looking for hypomethylated regions</span>
+<span class="identifier">exprs</span><span class="paren">(</span><span class="identifier">smoothNG</span><span class="paren">)</span> <span class="operator">=</span> <span class="operator">-</span><span class="identifier">exprs</span><span class="paren">(</span><span class="identifier">smoothNG</span><span class="paren">)</span>
+
+
+<span class="identifier">chersNG</span> <span class="operator">&lt;-</span> <span class="identifier">findChersOnSmoothed</span><span class="paren">(</span><span class="identifier">smoothNG</span>, <span class="identifier">probeAnno</span><span class="operator">=</span><span class="identifier">probeAnno</span>, <span class="identifier">thresholds</span><span class="operator">=</span><span class="identifier">c</span><span class="paren">(</span><span class="identifier">y0</span><span class="paren">[</span><span class="number">1</span><span class="paren">]</span>,<span class="identifier">y0</span><span class="paren">[</span><span class="number">2</span><span class="paren">]</span>,<span class="identifier">y0</span><span class="paren">[</span><span class="number">3</span><span class="paren">]</span><span class="paren">)</span>, <span class="identifier">distCutOff</span><span class="operator">=</span><span class="number">600</span>, <span class="identifier">verbose</span> <span class="operator">=</span> <span class="literal">FALSE</span><span class="paren">)</span>
+
+
+<span class="identifier">chersNG</span> <span class="operator">&lt;-</span> <span class="identifier">relateChers</span><span class="paren">(</span><span class="identifier">chersNG</span>, <span class="identifier">gff</span><span class="paren">)</span>
+</code></pre>
+
+<pre><code>Relating 3518 ChIP-enriched regions to GFF:
+1000  2000  3000  
+</code></pre>
+
+<pre><code class="r"><span class="identifier">chersNGD</span> <span class="operator">&lt;-</span> <span class="identifier">as.data.frame.cherList</span><span class="paren">(</span><span class="identifier">chersNG</span><span class="paren">)</span>
+<span class="identifier">chersNGD</span><span class="operator">&lt;-</span><span class="identifier">chersNGD</span><span class="paren">[</span><span class="identifier">order</span><span class="paren">(</span><span class="identifier">chersNGD</span><span class="operator">$</span><span class="identifier">maxLevel</span>, <span class="identifier">decreasing</span><span class="operator">=</span><span class="literal">TRUE</span><span class="paren">)</span>,<span class="paren">]</span>
+<span class="identifier">nrow</span><span class="paren">(</span><span class="identifier">chersNGD</span><span class="paren">)</span> <span class="comment"># --number of chers #3518</span>
+</code></pre>
+
+<pre><code>[1] 3518
+</code></pre>
+
+<pre><code class="r">
+<span class="comment">#chers detected within each array</span>
+<span class="identifier">nrow</span><span class="paren">(</span><span class="identifier">chersNGD</span><span class="paren">[</span><span class="identifier">grep</span><span class="paren">(</span><span class="string">"A01"</span>,<span class="identifier">chersNGD</span><span class="operator">$</span><span class="identifier">name</span><span class="paren">)</span>,<span class="paren">]</span><span class="paren">)</span>   <span class="comment">#2758</span>
+</code></pre>
+
+<pre><code>[1] 2758
+</code></pre>
+
+<pre><code class="r"><span class="identifier">nrow</span><span class="paren">(</span><span class="identifier">chersNGD</span><span class="paren">[</span><span class="identifier">grep</span><span class="paren">(</span><span class="string">"A02"</span>,<span class="identifier">chersNGD</span><span class="operator">$</span><span class="identifier">name</span><span class="paren">)</span>,<span class="paren">]</span><span class="paren">)</span> <span class="comment">#348</span>
+</code></pre>
+
+<pre><code>[1] 348
+</code></pre>
+
+<pre><code class="r"><span class="identifier">nrow</span><span class="paren">(</span><span class="identifier">chersNGD</span><span class="paren">[</span><span class="identifier">grep</span><span class="paren">(</span><span class="string">"A03"</span>,<span class="identifier">chersNGD</span><span class="operator">$</span><span class="identifier">name</span><span class="paren">)</span>,<span class="paren">]</span><span class="paren">)</span> <span class="comment">#412</span>
+</code></pre>
+
+<pre><code>[1] 412
+</code></pre>
+
+<pre><code class="r">
+
+<span class="comment">#repeating finding chers, but each assay (e.g. A01) is generated separately</span>
+<span class="identifier">chersA01</span> <span class="operator">&lt;-</span> <span class="identifier">findChersOnSmoothed</span><span class="paren">(</span><span class="identifier">smoothNG</span><span class="paren">[</span>,<span class="number">1</span><span class="paren">]</span>, <span class="identifier">probeAnno</span><span class="operator">=</span><span class="identifier">probeAnno</span>, <span class="identifier">thresholds</span><span class="operator">=</span><span class="identifier">c</span><span class="paren">(</span><span class="identifier">y0</span><span class="paren">[</span><span class="number">1</span><span class="paren">]</span><span class="paren">)</span>, <span class="identifier">distCutOff</span><span class="operator">=</span><span class="number">600</span>, <span class="identifier">verbose</span> <span class="operator">=</span> <span class="literal">FALSE</span><span class="paren">)</span>
+<span class="identifier">chersA01</span> <span class="operator">&lt;-</span> <span class="identifier">relateChers</span><span class="paren">(</span><span class="identifier">chersA01</span>, <span class="identifier">gff</span><span class="paren">)</span>
+</code></pre>
+
+<pre><code>Relating 2758 ChIP-enriched regions to GFF:
+1000  2000  
+</code></pre>
+
+<pre><code class="r"><span class="identifier">exportCherList</span><span class="paren">(</span><span class="identifier">chersA01</span>,<span class="identifier">filename</span><span class="operator">=</span><span class="string">"2014.03.03.chers_A01_HYPO.bed"</span>,<span class="identifier">format</span><span class="operator">=</span><span class="string">"bed"</span>,<span class="identifier">genome</span><span class="operator">=</span><span class="string">"oyster"</span><span class="paren">)</span>
+<span class="identifier">bedA01</span><span class="operator">&lt;-</span><span class="identifier">read.delim</span><span class="paren">(</span><span class="string">"2014.03.03.chers_A01_HYPO.bed"</span>, <span class="identifier">header</span><span class="operator">=</span><span class="literal">F</span><span class="paren">)</span>
+<span class="identifier">bedA01</span><span class="operator">$</span><span class="identifier">V6</span><span class="operator">&lt;-</span><span class="number">1</span>
+<span class="identifier">rangedA01</span><span class="operator">&lt;-</span><span class="identifier">BED2RangedData</span><span class="paren">(</span><span class="identifier">bedA01</span><span class="paren">)</span>
+
+<span class="comment">#doing the same thing for assay A02 and A03</span>
+<span class="identifier">chersA02</span> <span class="operator">&lt;-</span> <span class="identifier">findChersOnSmoothed</span><span class="paren">(</span><span class="identifier">smoothNG</span><span class="paren">[</span>,<span class="number">2</span><span class="paren">]</span>, <span class="identifier">probeAnno</span><span class="operator">=</span><span class="identifier">probeAnno</span>, <span class="identifier">thresholds</span><span class="operator">=</span><span class="identifier">c</span><span class="paren">(</span><span class="identifier">y0</span><span class="paren">[</span><span class="number">2</span><span class="paren">]</span><span class="paren">)</span>, <span class="identifier">distCutOff</span><span class="operator">=</span><span class="number">600</span>, <span class="identifier">verbose</span> <span class="operator">=</span> <span class="literal">FALSE</span><span class="paren">)</span>
+<span class="identifier">chersA02</span><span class="operator">&lt;-</span> <span class="identifier">relateChers</span><span class="paren">(</span><span class="identifier">chersA02</span>, <span class="identifier">gff</span><span class="paren">)</span>
+</code></pre>
+
+<pre><code>Relating 348 ChIP-enriched regions to GFF:
+</code></pre>
+
+<pre><code class="r"><span class="identifier">exportCherList</span><span class="paren">(</span><span class="identifier">chersA02</span>,<span class="identifier">filename</span><span class="operator">=</span><span class="string">"2014.03.03.chers_A02_HYPO.bed"</span>,<span class="identifier">format</span><span class="operator">=</span><span class="string">"bed"</span>,<span class="identifier">genome</span><span class="operator">=</span><span class="string">"oyster"</span><span class="paren">)</span>
+<span class="identifier">bedA02</span><span class="operator">&lt;-</span><span class="identifier">read.delim</span><span class="paren">(</span><span class="string">"2014.03.03.chers_A02_HYPO.bed"</span>, <span class="identifier">header</span><span class="operator">=</span><span class="literal">F</span><span class="paren">)</span>
+<span class="identifier">bedA02</span><span class="operator">$</span><span class="identifier">V6</span><span class="operator">&lt;-</span><span class="number">1</span>
+<span class="identifier">rangedA02</span><span class="operator">&lt;-</span><span class="identifier">BED2RangedData</span><span class="paren">(</span><span class="identifier">bedA02</span><span class="paren">)</span>
+
+<span class="identifier">chersA03</span> <span class="operator">&lt;-</span> <span class="identifier">findChersOnSmoothed</span><span class="paren">(</span><span class="identifier">smoothNG</span><span class="paren">[</span>,<span class="number">3</span><span class="paren">]</span>, <span class="identifier">probeAnno</span><span class="operator">=</span><span class="identifier">probeAnno</span>, <span class="identifier">thresholds</span><span class="operator">=</span><span class="identifier">c</span><span class="paren">(</span><span class="identifier">y0</span><span class="paren">[</span><span class="number">3</span><span class="paren">]</span><span class="paren">)</span>, <span class="identifier">distCutOff</span><span class="operator">=</span><span class="number">600</span>, <span class="identifier">verbose</span> <span class="operator">=</span> <span class="literal">FALSE</span><span class="paren">)</span>
+<span class="identifier">chersA03</span><span class="operator">&lt;-</span> <span class="identifier">relateChers</span><span class="paren">(</span><span class="identifier">chersA03</span>, <span class="identifier">gff</span><span class="paren">)</span>
+</code></pre>
+
+<pre><code>Relating 412 ChIP-enriched regions to GFF:
+</code></pre>
+
+<pre><code class="r"><span class="identifier">exportCherList</span><span class="paren">(</span><span class="identifier">chersA03</span>,<span class="identifier">filename</span><span class="operator">=</span><span class="string">"2014.03.03.chers_A03_HYPO.bed"</span>,<span class="identifier">format</span><span class="operator">=</span><span class="string">"bed"</span>,<span class="identifier">genome</span><span class="operator">=</span><span class="string">"oyster"</span><span class="paren">)</span>
+<span class="identifier">bedA03</span><span class="operator">&lt;-</span><span class="identifier">read.delim</span><span class="paren">(</span><span class="string">"2014.03.03.chers_A03_HYPO.bed"</span>, <span class="identifier">header</span><span class="operator">=</span><span class="literal">F</span><span class="paren">)</span>
+<span class="identifier">bedA03</span><span class="operator">$</span><span class="identifier">V6</span><span class="operator">&lt;-</span><span class="number">1</span>
+<span class="identifier">rangedA03</span><span class="operator">&lt;-</span><span class="identifier">BED2RangedData</span><span class="paren">(</span><span class="identifier">bedA03</span><span class="paren">)</span>
+
+<span class="comment">#generate objects that contain overlapping regions</span>
+<span class="comment">#this requires the 'ranged' data generated above</span>
+<span class="identifier">overlapA01.A02</span><span class="operator">&lt;-</span><span class="identifier">findOverlappingPeaks</span><span class="paren">(</span><span class="identifier">rangedA01</span>,<span class="identifier">rangedA02</span><span class="paren">)</span>
+<span class="identifier">overlapA01.A03</span><span class="operator">&lt;-</span><span class="identifier">findOverlappingPeaks</span><span class="paren">(</span><span class="identifier">rangedA01</span>,<span class="identifier">rangedA03</span><span class="paren">)</span>
+<span class="identifier">overlapA02.A03</span><span class="operator">&lt;-</span><span class="identifier">findOverlappingPeaks</span><span class="paren">(</span><span class="identifier">rangedA02</span>,<span class="identifier">rangedA03</span><span class="paren">)</span>
+
+<span class="comment">#number of overlapping peaks in each pairwise comparison</span>
+<span class="identifier">nrow</span><span class="paren">(</span><span class="identifier">overlapA01.A02</span><span class="operator">$</span><span class="identifier">OverlappingPeaks</span><span class="paren">)</span> <span class="comment">#317</span>
+</code></pre>
+
+<pre><code>[1] 317
+</code></pre>
+
+<pre><code class="r"><span class="identifier">nrow</span><span class="paren">(</span><span class="identifier">overlapA01.A03</span><span class="operator">$</span><span class="identifier">OverlappingPeaks</span><span class="paren">)</span> <span class="comment">#369</span>
+</code></pre>
+
+<pre><code>[1] 369
+</code></pre>
+
+<pre><code class="r"><span class="identifier">nrow</span><span class="paren">(</span><span class="identifier">overlapA02.A03</span><span class="operator">$</span><span class="identifier">OverlappingPeaks</span><span class="paren">)</span> <span class="comment">#269</span>
+</code></pre>
+
+<pre><code>[1] 269
+</code></pre>
+
+<pre><code class="r">
+<span class="comment">#This shows how multiple peaks in A03 are covered by 1 peak in A02. Here 255 regions of A02 overlap with A03, but 265 regions of A03 overlap with A02.</span>
+<span class="comment">#############</span>
+<span class="identifier">nrow</span><span class="paren">(</span><span class="identifier">rangedA02</span><span class="paren">)</span> <span class="comment">#348</span>
+</code></pre>
+
+<pre><code>[1] 348
+</code></pre>
+
+<pre><code class="r"><span class="identifier">A02peaksWithOverlapA03</span><span class="operator">&lt;-</span><span class="identifier">overlapA02.A03</span><span class="operator">$</span><span class="identifier">Peaks1withOverlaps</span>; <span class="identifier">nrow</span><span class="paren">(</span><span class="identifier">A02peaksWithOverlapA03</span><span class="paren">)</span> <span class="comment">#255</span>
+</code></pre>
+
+<pre><code>[1] 255
+</code></pre>
+
+<pre><code class="r"><span class="identifier">A02noOverlapWithA03</span><span class="operator">&lt;-</span><span class="identifier">rangedA02</span><span class="paren">[</span><span class="operator">!</span><span class="identifier">rownames</span><span class="paren">(</span><span class="identifier">rangedA02</span><span class="paren">)</span> <span class="operator">%in%</span> <span class="identifier">rownames</span><span class="paren">(</span><span class="identifier">A02peaksWithOverlapA03</span><span class="paren">)</span>,<span class="paren">]</span>; <span class="identifier">nrow</span><span class="paren">(</span><span class="identifier">A02noOverlapWithA03</span><span class="paren">)</span> <span class="comment">#93</span>
+</code></pre>
+
+<pre><code>[1] 93
+</code></pre>
+
+<pre><code class="r">
+<span class="identifier">nrow</span><span class="paren">(</span><span class="identifier">rangedA03</span><span class="paren">)</span> <span class="comment">#412</span>
+</code></pre>
+
+<pre><code>[1] 412
+</code></pre>
+
+<pre><code class="r"><span class="identifier">A03peaksWithOverlapA02</span><span class="operator">&lt;-</span><span class="identifier">overlapA02.A03</span><span class="operator">$</span><span class="identifier">Peaks2withOverlaps</span>; <span class="identifier">nrow</span><span class="paren">(</span><span class="identifier">A03peaksWithOverlapA02</span><span class="paren">)</span> <span class="comment">#265</span>
+</code></pre>
+
+<pre><code>[1] 265
+</code></pre>
+
+<pre><code class="r"><span class="identifier">A03noOverlapWithA02</span><span class="operator">&lt;-</span><span class="identifier">rangedA03</span><span class="paren">[</span><span class="operator">!</span><span class="identifier">rownames</span><span class="paren">(</span><span class="identifier">rangedA03</span><span class="paren">)</span> <span class="operator">%in%</span> <span class="identifier">rownames</span><span class="paren">(</span><span class="identifier">A03peaksWithOverlapA02</span><span class="paren">)</span>,<span class="paren">]</span>; <span class="identifier">nrow</span><span class="paren">(</span><span class="identifier">A03noOverlapWithA02</span><span class="paren">)</span> <span class="comment">#147</span>
+</code></pre>
+
+<pre><code>[1] 147
+</code></pre>
+
+<pre><code class="r"><span class="comment">################</span>
+
+<span class="comment">#Ryan's annotation: we now have overlapping and nonoverlapping chers between A02 and A03, what we want now, is to remove those chers that also overlap with A01 from each set</span>
+<span class="identifier">A02peaksWithOverlapA01</span><span class="operator">&lt;-</span><span class="identifier">overlapA01.A02</span><span class="operator">$</span><span class="identifier">Peaks2withOverlaps</span>; <span class="identifier">nrow</span><span class="paren">(</span><span class="identifier">A02peaksWithOverlapA01</span><span class="paren">)</span> <span class="comment">#315</span>
+</code></pre>
+
+<pre><code>[1] 315
+</code></pre>
+
+<pre><code class="r"><span class="identifier">A02peaksWithOverlapA03butNotA01</span><span class="operator">&lt;-</span><span class="identifier">A02peaksWithOverlapA03</span><span class="paren">[</span><span class="operator">!</span><span class="identifier">rownames</span><span class="paren">(</span><span class="identifier">A02peaksWithOverlapA03</span><span class="paren">)</span> <span class="operator">%in%</span> <span class="identifier">rownames</span><span class="paren">(</span><span class="identifier">A02peaksWithOverlapA01</span><span class="paren">)</span>,<span class="paren">]</span>; <span class="identifier">nrow</span><span class="paren">(</span><span class="identifier">A02peaksWithOverlapA03butNotA01</span><span class="paren">)</span> <span class="comment">#19</span>
+</code></pre>
+
+<pre><code>[1] 19
+</code></pre>
+
+<pre><code class="r">
+<span class="identifier">A03peaksWithOverlapA01</span><span class="operator">&lt;-</span><span class="identifier">overlapA01.A03</span><span class="operator">$</span><span class="identifier">Peaks2withOverlaps</span>; <span class="identifier">nrow</span><span class="paren">(</span><span class="identifier">A03peaksWithOverlapA01</span><span class="paren">)</span> <span class="comment">#364</span>
+</code></pre>
+
+<pre><code>[1] 364
+</code></pre>
+
+<pre><code class="r"><span class="identifier">A03peaksWithOverlapA02butNotA01</span><span class="operator">&lt;-</span><span class="identifier">A03peaksWithOverlapA02</span><span class="paren">[</span><span class="operator">!</span><span class="identifier">rownames</span><span class="paren">(</span><span class="identifier">A03peaksWithOverlapA02</span><span class="paren">)</span> <span class="operator">%in%</span> <span class="identifier">rownames</span><span class="paren">(</span><span class="identifier">A03peaksWithOverlapA01</span><span class="paren">)</span>,<span class="paren">]</span>; <span class="identifier">nrow</span><span class="paren">(</span><span class="identifier">A03peaksWithOverlapA02butNotA01</span><span class="paren">)</span> <span class="comment">#18</span>
+</code></pre>
+
+<pre><code>[1] 18
+</code></pre>
+
+<pre><code class="r">
+<span class="comment">#write RangedData to bed</span>
+<span class="comment">#Ryan's annotation: https://stat.ethz.ch/pipermail/bioconductor/2012-April/045050.html</span>
+<span class="identifier">write.table</span><span class="paren">(</span><span class="identifier">as.data.frame</span><span class="paren">(</span><span class="identifier">A02peaksWithOverlapA03butNotA01</span><span class="paren">)</span><span class="paren">[</span>,<span class="identifier">c</span><span class="paren">(</span><span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span><span class="paren">)</span><span class="paren">]</span>, <span class="identifier">file</span><span class="operator">=</span><span class="string">"2014.03.03.A02overlapA03_butNotA01_HYPO.bed"</span>,<span class="identifier">sep</span><span class="operator">=</span><span class="string">"\t"</span>,<span class="identifier">quote</span><span class="operator">=</span><span class="literal">F</span>,<span class="identifier">row.names</span><span class="operator">=</span><span class="literal">F</span>,<span class="identifier">col.names</span><span class="operator">=</span><span class="literal">F</span><span class="paren">)</span>
+<span class="identifier">write.table</span><span class="paren">(</span><span class="identifier">as.data.frame</span><span class="paren">(</span><span class="identifier">A03peaksWithOverlapA02butNotA01</span><span class="paren">)</span><span class="paren">[</span>,<span class="identifier">c</span><span class="paren">(</span><span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span><span class="paren">)</span><span class="paren">]</span>, <span class="identifier">file</span><span class="operator">=</span><span class="string">"2014.03.03.A03overlapA02_butNotA01_HYPO.bed"</span>,<span class="identifier">sep</span><span class="operator">=</span><span class="string">"\t"</span>,<span class="identifier">quote</span><span class="operator">=</span><span class="literal">F</span>,<span class="identifier">row.names</span><span class="operator">=</span><span class="literal">F</span>,<span class="identifier">col.names</span><span class="operator">=</span><span class="literal">F</span><span class="paren">)</span>
+
+</code></pre>
+
+
+
+
+
+</body></html>
