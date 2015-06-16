@@ -1,0 +1,128 @@
+﻿Influence of Ethynl-Estradiol on DNA Methylation in Oysters
+
+
+M.R. Gavery and S.B. Roberts
+
+
+Introduction 
+Endocrine disrupting compounds are emerging environmental contaminants that threaten water quality and health of humans and wildlife worldwide. These compounds, many with structural similarities to hormones such as estrogen, affect endocrine pathways and can cause reproductive perturbations. These compounds enter aquatic ecosystems through a variety of sources including wastewater treatments facilities, septic systems, and industrial effluents.  While physiological effects of endocrine disruption have been described, it is becoming evident that our understanding of the biological pathways affected are incomplete and that alternative modes of action need to be explored.  One compound of concern is 17α-ethinylestradiol (EE2), the active constituent of the female contraceptive pill, has been reported at high concentrations in aquatic environments.  Data collected in 1999 – 2000, from US streams in 30 states, reported concentrations of EE2 between 5 and 273 ng/L.27  Effects of EE2 exposure include delayed sexual development, induction of vitellogenesis and feminization of males in both fish and bivalves.28, 29  However, mechanisms underlying the response of bivalves is unclear..
+ 
+Until recently, there has been limited research regarding the impacts of EDCs in aquatic invertebrate species such as molluscs.  This is in part due to the fact that less is known about the endocrine system in these organisms.  For example, evidence for a functional estrogen receptor, the canonical target of EDCs, has only been recently identified in bivalve molluscs.23 The bivalve ER appears to be a constitutive TF and does not bind estrogen.  Nevertheless, a number of studies have recently described reproductive and developmental disruption in molluscs exposed to EDCs. Larval C.gigas exposed to the estrogen mimic nonylphenol at days 7-8 post fertilization show long-term reproductive effects including a skewed sex ratio toward females, increased incidence of simultaneous hermaphroditism, and decreased gamete viability 10 months after the exposure (Nice et al., 2003).  Additionally, increased hermaphroditism and skewed female:male sex ratios were also observed after exposure of adult Sydney rock oysters Saccostrea glomerata to the synthetic estrogen ethinylestradiol early in gametogenesis (Andrew et al., 2010). 
+ 
+Estrogen receptors have only been recently identified in bivalve molluscs, however, unlike the vertebrate ER, C. gigas ER is not capable of binding estrogen (Matsumoto et al., 2007).  This is similar to other molluscan ER receptors such as those identified in Aplysia and Octopus vulgaris (Keay et al., 1996). These results indicate that molluscan ERs are different than vertebrate ERs in that they do elicit signaling through the canonical nuclear-receptor pathway, therefore, in molluscs, estrogen appears to be signaling through non-genomic pathways. Examples of non-genomic pathways being induced have been reported in Mytilus species (Canesi et al 2004, Stephano et al 2003). It is becoming clearer that endocrine disrupting compounds induce biological effects outside of the canonical nuclear-receptor dependent pathways. One way that EDCs may elicit these changes is through disruptions to normal epigenetic mechanisms. 
+ 
+The relationship between epigenetics and endocrine disruption was first explored in mammalian systems where it was shown that exposure to bisphenol A in pregnant mice induces DNA hypomethylation in offspring with a distinct phenotype.16 Very recently, DNA methylation has been evaluated in aquatic organisms.  A recent study by Stromqvist et al. (2010)18 reported significant hypo-methylation of the vitellogenin gene promoter in male zebrafish exposed to EE2, suggesting an epigenetic basis for the induction of vitellogenin (decreased DNA methylation is typically associated with increased transcription).  Similarly, Wang and colleagues (2010)19 reported global hypo-methylation in the liver tissue of false kelpfish (S. marmoratus) exposed to environmentally relevant concentrations of tributyltin.  Although the mechanism of DNA methylation has been less explored in invertebrates, there is evidence that DNA methylation is affected by similar compounds.  In the water flea, Daphnia magna, compounds such as zinc, vinclozolin, and 5-azacytidine (a pharmaceutical compound) have been shown to alter global DNA methylation in a dose-dependent manner.20,21 In addition, transgenerational effects of nonylphenol, an aquatic pollutant and known estrogen mimic, have been reported in Pacific oysters, although the underlying mechanism remains unclear.22   The goal of this study was to determine how DNA methylation might be influenced by exposure to EE2. 
+
+
+
+
+Methods & Materials
+Experimental Design
+Oysters (n=300, age 6 months) were collected from Thorndyke Bay, WA in December of 2012 and brought into the lab to acclimate.  Oysters were divided into 6 replicate tanks (n=50/tank) and maintained in at 12C for 15 days prior to the initiation of the experiment. During the 60 day experiment oysters were fed an algal diet twice daily and water was exchanged every other day.  Temperature was raised slowly from 12C to 24C over the course of the experiment to promote gonadal maturation.  Minimal mortality was observed over the 60 day period. 
+
+
+Oysters were exposed to either EE2 (500ng/L) (n=150) or ethanol control (n=150) throughout the 60 day experiment.  Treatments were refreshed at each water exchange. Oysters were sampled at 3 time-points; day 0, day 7, day 60.  On day zero, 15 oysters were sampled for histological analysis of the gonad to determine the average sexual maturity at the onset of the experiment.  On day 7, 15 oysters/treatment were measured for shell length, width depth and total weight and an approximately 5mm2 cross section midway between the adductor muscle and the labial palps was taken for histological analysis of the gonad.  In addition, gill and gonad samples were taken aseptically and stored at -80C for DNA isolation.  On day 60 the remaining oysters (n=113 EE2 and n= 114) were sampled similarly to the day 7 oysters.  In addition, a smear of gonad was observed under a light microscope to determine the sex of the oyster. The presence of spermatazoa or oocytes were used as indicators.  Chi-square test was used to determine if significant difference in sex ratios at the day 60 time-point.
+
+
+Histology
+Tissue samples taken for histological analysis were placed in Davidson’s solution
+(10% glycerine, 20% formalin, 30% alcohol, 30% sodium chloride solution and 10% glacial acetic acid) for 24h after which the solution was exchanged for 70% ethanol.  Tissues were sent to Diagnostic Pathology Imaging Group for staining with haematoxylin and counterstaining with eosin (H&E). Study of the gonadal area was performed under a compound microscope at 200 and 400× magnification. Oysters were identified as male or female based on the presence of spermatocytes or oocytes respectively, if neither were observed oysters were identified as sexually undifferentiated.
+
+
+MBD-ChIP Analysis
+Genomic DNA was isolated using DNAzol (Molecular Research Center) from gonad tissue of EE2 and control oysters (n=4) at day 7. DNA was pooled in equal amounts for each treatment, and methylation enrichment performed using the MethylMiner Kit (Invitrogen) following the manufacturer’s instructions.  Specifically, pooled DNA was sheared by sonication on a Covaris S2 (Covaris) (parameters: 10 cycles at 60 seconds each, duty cycle of 10%, intensity of 5, 100 cycles/burst).  Sheared DNA was used as input DNA and incubated with MBD-Biotin Protein coupled to M-280 Streptavidin Dynabeads following the manufacturer’s instructions (MethylMiner (Invitrogen)). Enriched, methylated DNA was eluted from the bead complex with 1M NaCl and purified by ethanol precipitation. DNA was further purified using PCR purification columns (Qiagen) prior to labeling.
+
+
+A custom DNA tiling array containing 697,753 probes covering 9158 full-length C. gigas genes including 2kb upstream of the start site was used.  Probes were designed using an interval size of 100bp and a window size of 25bp. Two different comparative (MBD vs MBD) hybridizations were performed. The EE2 and control MBD samples labels were swapped between the replicates.  A third hybridization was performed using the input DNA from the EE2 and control samples to control for variation in signal that resulted from copy number variation or other artifact.  Samples were labeled using the NimbleGen Dual-Color DNA Labeling Kit and the arrays were processed according to the manufacturer’s recommendations (Roche NimbleGen, Madison, Wisconsin) and imaged at 5um using a GenePix 4000B microarray scanner (Molecular Devices, Sunnyvale, CA).
+
+
+
+
+Raw data from both the Cy3 and Cy5 channels were imported into R and analyzed using the R package Ringo.  Specific code used in analysis is available at http://rpubs.com/mgavery/14263.  First, raw probe intensities were converted into normalized log ratios (logFCs), using loess normalization. Following normalization, a smoothing procedure was performed such that a probe’s logFC value was replaced with the median value of all probe logFC values within a 600bp sliding window.  Enriched regions were identified by setting thresholds for smoothed ratios.  In order for a region to be identified as enriched it must be at least 600 bp (covering 3 probes) and the smoothed ratio needs to be greater than 1 for the MBD assays and greater than 0.485 for the input versus input assay.  The lower threshold for the input versus input assay was used in order to identify only the most robust DMRs as there were a large number of enriched regions in the MBD vs. MBD assays, where the same, but slightly weaker pattern of logFC values was found.  Enriched regions were used to identify differentially methylated regions (DMRs).  A DMR was identified when enriched regions from the dye swapped MBD assays overlapped, and there were no enrichment in the input assay in the overlapping region. 
+
+
+
+
+
+
+Results
+Sex Ratio and Sizes
+There was not a significant effect on EE2 treatment on sex ratios. On day zero of the trial, 7 oysters were identified as male and 3 as female (i.e. 33% female).  On day 7 of the trial the control oysters still had a higher proportion of males than females at 33% female, but the EE2 oysters had a higher proportion of females (50% female) (see Table 1) .  On day 60 of the trial, since the majority of the individuals were close to sexual maturity, sex was determined by identifying sperm or oocytes from a gonad smear via light microscopy.  At this timepoint the proportion of females between the control (54%) and EE2 treated (57%) groups were similar. Although there was a trend toward more females in the EE2 treated groups at both timepoints, there were no statistically significant differences at either time-point. 
+
+
+
+
+Table 1.   Number of oysters of each sex at day 60.  Counts for the individual tanks as well as totals are listed.  Unknown individuals indicate those where sex could not be determined by the method used.
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+At the end of the experiment (day 60)  all oysters were measured and weighed.  There were no significant differences between treated and control oysters.  When examined on a per sex basis, EE2 treated females tended to be larger than the control females for both length and weight (Figure 1), but the results of an ANOVA were not statistically significant.
+
+
+  
+
+Figure 1. Whole mass of oysters (grams) by sex and by treatment. Fc=female control, Ft=female EE2 treated, Mc=male control, Mt=male EE2 treated. Boxplots contain the middle 75% of the data and lines encompass the minimum and maximum.  Open circles represent outliers. Horizontal black bars indicate median values.
+
+
+
+
+DNA Methylation Analysis
+Samples were analyzed for DNA methylation 7 days after the first exposure to EE2. A total of 45 differentially methylated regions (DMR) were identified between the control and EE2 treated group.  Twenty-seven of the DMR were hypermethylated and 18 DMR were hypomethylated in the EE2 treatment compared to the control.  Four of the DMRs were located upstream of transcription start site (TSS) while the remaining 41 DMR were in the gene bodies either in an intron (22), exon (8), or spanning one or more exon/intron junctions (11).  See table 2 for a list of DMR and their annotations based on blastx comparison to Uni-Prot SwissProt database. 
+  
+
+Table 2. Table of differentially methylated regions (DMR). DMR ID gives the location of the DMR by scaffold number_start site.  Location of the DMR either in an exon, intron, 5’ of the gene or crossing at least 1 exon/intron junction (junction) is listed in the annotation column.
+
+
+
+
+
+
+Discussion
+The goal of this study was to determine if DNA methylation was involved in mediating physiological responses of oysters to estrogens. Here, 6 month old oysters in very early stages of gametogenic development at the onset of the trial were exposed to a high dose of EE2 under temperature and food conditions that would promote gamete maturation (Lannan 1984). After seven days of exposure, there was a trend toward more females in the EE2 exposed group, but by day 60 both control and EE2 groups showed similar sex ratios (between 50 – 60% females).  This result was rather unexpected as we predicted that exposure to an active estrogenic compound would induce sex reversal in oysters that were in early stage gametogenic development based on previous work by Mori et al (1969). It should be noted that although this result appears to differ from the sex reversal reported by Mori et al (1969), their study did not include any statistical analysis of the sex ratios and although there was a trend toward more females in the estrogen treated group, these results were not statistically significant using the Chi-square test employed for this study.  Another expected observation was the high proportion of females in the control group. This was unexpected as at 6 months this was likely the oysters first gametogenic cycle and C. gigas are generally protandrous, meaning they mature first as males.  However, sex determination can be impacted by environmental conditions such as food availability and temperature and it is possible that the high number of females observed is a result of the high food abundance (Amaya et al, others…). 
+ 
+The effect size in response to estrogenic compounds is generally small in molluscs and the ability of sex steroids to act as hormones in molluscs is still somewhat controversial (Scott 2013). Regardless, but this does not preclude the possibility that E2 may be acting through non-canonical pathways to induce physiological effects .  Estrogen can affect many different physiologicaly processes other than reproduction .  This has been observed in Mytilus, NO production, although reproduction has been the primary response measured in molluscan studies, it’s been shown in other species, such as fish that many physiological responses such as somatic growth, immune function and others The EE2 females tended to be slightly larger than the control females at day 60 and based on this chose to look for differences in DNA methylation at day 7 females. 
+
+
+Using a custom-made DNA tiling array for C. gigas DMRs were identified between control and EE2 treated early gametogenic stage female oysters indicating a physiological response to the EE2 on a molecular level.  It is not clear whether this epigenetic response is similar to that involved from endogenous estrogen production () or a response to an exogenous compound (), but it does indicate that there is an epigenetic response that is likely either a cause or effect of transcriptional changes in female gonad tissue (ENCODE). Because DNA methylation marks may be maintained through generations () and it’s not clear how much epigenetic reprogramming occurs in invertebrates (), these changes may have impacts on larvae that develop from these eggs.  The genes shown to be differentially methylated are involved in a wide range of biological processes including; …(list all??).  Although genes traditionally identified as being regulated in response to estrogen, including vitellogenin and estrogen receptor homologs, were present on the array, they were not identified as being differentially methylated. However, a number of genes that were identified as containing DMRs have been shown to respond to estrogen in either bivalves () or vertebrates ().  Many of these are receptors.  In addition, a number of genes involved in …   Because of the microarray only covers XX% of the genes in the oyster genome, this is likely not a complete list of genes that are epigenetically affected by EE2.   Interestingly, many of the DMRs were identified in intra-genic regions, and not in putative ‘promoter’ regions as has been the traditional place that DMRs have been looked at in vertebrates (). While the functional role of DNA methylation has not been defined in bivalves, it is likely that it may be acting in the traditional role as a repressor of gene expression (Riviere) or may be involved in regulation of splicing (Gavery & Roberts, Yi paper). In the future it would be interesting to combine the results of DNA methylation analysis with RNA-Seq, although it’s still difficult to look at splicing in oysters.
+
+
+This study shows that EE2 does not induce sex reversal in C. gigas under conditions that promote gametogenesis (similar to hatchery conditions).  It is still possible that this result is confounded by the environmental conditions in the laboratory that may promote femaleness anyway.  However, estrogen is a strong an ancient signalling mechanism and has many physiolgical effects outside of the reproductive axis including growth and immunity.  In this study, DNA methylation changes occured only 7 days after exposure to the compound.  The physiolgoical effects of these changes remain to be seen, but the implications of epigneetic changes is that there is the potential for transgenerational inheritance.  Future work should look at how gene expression changes are also associated and also if evidence for transgenerational   
+
+
+
+
+
+
+
+
+References
+[R] R Core Team (2014). R: A language and environment for statistical
+computing. R Foundation for Statistical Computing, Vienna, Austria.
+URL http://www.R-project.org/.
+                                   
+[Ringo] Joern Toedling, Oleg Sklyar, Tammo Krueger, Jenny J. Fischer, Silke
+Sperling, and Wolfgang Huber (2007) Ringo - an R/Bioconductor package
+for analyzing ChIP-chip readouts. BMC Bioinformatics, 8:221.
