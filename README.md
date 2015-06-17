@@ -7,7 +7,11 @@ This respository includes a scientific report on an experiment designed to exami
 **Files and Directories**      
 - [Gavery-Roberts-EE2.md](https://github.com/sr320/paper-Oyster-EE2/blob/master/Gavery-Roberts-EE2.md) - Scientific manuscript. format = markdown    
 - `Gavery-Roberts-EE2.pdf` - Scientific manuscript. format = PDF      
--  `Table-2.md` - Table of differentially methylated regions and annotations.      
+-  `Table-2.md` - Table of differentially methylated regions and annotations.       
+-  `tracks/oyster-EE2-DMR.gff` - Generic Feature Format file with location of DMRs and hypo / hyper annotation.      
+-  `tracks/2013.11.21.A01_smoothed.wig` - "raw" array data for individual #1.           
+-  `tracks/2013.11.21.A02_smoothed.wig` - "raw" array data for individual #2.      
+-  `tracks/2013.11.21.A03_smoothed.wig` - "raw" array data for individual #3.      
 -  `img` - directory containing manuscript figures and table (image).    
 -  `misc/gd-manuscript.txt` - orginal google drive version(s) of manuscript.       
 - `misc/DMRs.txt` - text file corresponding to Table-2 (differentially methylated regions and annotations).       
