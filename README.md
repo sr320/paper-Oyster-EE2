@@ -5,7 +5,7 @@ This respository includes a scientific report on an experiment designed to exami
 
 
 **Files and Directories**      
-- `[Gavery-Roberts-EE2.md](https://github.com/sr320/paper-Oyster-EE2/blob/master/Gavery-Roberts-EE2.md)` - Scientific manuscript. format = markdown    
+- [Gavery-Roberts-EE2.md](https://github.com/sr320/paper-Oyster-EE2/blob/master/Gavery-Roberts-EE2.md) - Scientific manuscript. format = markdown    
 - `Gavery-Roberts-EE2.pdf` - Scientific manuscript. format = PDF      
 -  `Table-2.md` - Table of differentially methylated regions and annotations.      
 -  `img` - directory containing manuscript figures and table (image).    
