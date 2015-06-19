@@ -1,0 +1,4 @@
+FileNameCy5	FileNameCy3
+A01_EE2.input_532.pair	A01_Ctrl.input_635.pair
+A02_EE2.MBD_532.pair	A02_Ctrl.MBD_635.pair
+A03_EE2.MBD_635.pair	A03_Ctrl.MBD_532.pair
