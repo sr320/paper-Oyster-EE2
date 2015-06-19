@@ -39,7 +39,7 @@ First, raw probe intensities were converted into normalized log ratios (logFCs),
 
 ## Results
 ### Sex Ratio and Sizes
-There was not a significant effect on EE<sub>2</sub> treatment on sex ratios. On day zero of the trial, 7 oysters were identified as male and 3 as female (i.e. 33% female).  On day 7 of the trial the control oysters still had a higher proportion of males than females at 33% female, but the EE<sub>2</sub> oysters had a higher proportion of females (50% female) (see Table 1) .  All images from day 7 histological analysis are available in [a flickr album](https://www.flickr.com/photos/35623250@N04/sets/72157633108050005)  (117 photos;  Images include 10x and 60x magnifications of gonad area) On day 60 of the trial, since the majority of the individuals were close to sexual maturity, sex was determined by identifying sperm or oocytes from a gonad smear via light microscopy.  At this timepoint the proportion of females between the control (54%) and EE<sub>2</sub> treated (57%) groups were similar. Although there was a trend toward more females in the EE<sub>2</sub> treated groups at both timepoints, there were no statistically significant differences at either time-point. 
+There was not a significant effect on EE<sub>2</sub> treatment on sex ratios. On day zero of the trial, 7 oysters were identified as male and 3 as female (i.e. 33% female).  On day 7 of the trial the control oysters still had a higher proportion of males than females at 33% female, but the EE<sub>2</sub> oysters had a higher proportion of females (50% female) (see Table 1) .  All images from day 7 histological analysis are available in [**a flickr album**](https://www.flickr.com/photos/35623250@N04/sets/72157633108050005)  (117 photos;  Images include 10x and 60x magnifications of gonad area) On day 60 of the trial, since the majority of the individuals were close to sexual maturity, sex was determined by identifying sperm or oocytes from a gonad smear via light microscopy.  At this timepoint the proportion of females between the control (54%) and EE<sub>2</sub> treated (57%) groups were similar. Although there was a trend toward more females in the EE<sub>2</sub> treated groups at both timepoints, there were no statistically significant differences at either time-point. 
 
 **Table 1**.   Number of oysters of each sex at day 60.  Counts for the individual tanks as well as totals are listed.  Unknown individuals indicate those where sex could not be determined by the method used.
 
@@ -53,14 +53,17 @@ At the end of the experiment (day 60)  all oysters were measured and weighed.  T
 **Figure 1**. Whole mass of oysters (grams) by sex and by treatment. Fc=female control, Ft=female EE<sub>2</sub> treated, Mc=male control, Mt=male EE<sub>2</sub> treated. Boxplots contain the middle 75% of the data and lines encompass the minimum and maximum.  Open circles represent outliers. Horizontal black bars indicate median values.
 
 ### DNA Methylation Analysis
-Samples were analyzed for DNA methylation differences 7 days after the first exposure to EE<sub>2</sub>. 
-
+Samples were analyzed for DNA methylation differences 7 days after the first exposure to EE<sub>2</sub>.  Raw intensity files (A01_Ctrl.input_635.pair, A01_EE2.input_532.pair, A02_Ctrl.MBD_635.pair, A02_EE2.MBD_532.pair, A03_Ctrl.MBD_532.pair, A03_EE2.MBD_635.pair) are available in the [*array-raw* directory](https://github.com/sr320/paper-Oyster-EE2/tree/master/array-raw).  Following normalization and smoothing three genome feature tracks were generated; A01_smoothed.wig, A02_smoothed.wig, A03_smoothed.wig, which represent input vs input, EE<sub>2</sub> vs control, and EE<sub>2</sub> vs control (dye swap), respectively (Figure 3). 
 
 A total of 45 differentially methylated regions (DMR) were identified between the control and EE<sub>2</sub> treated group.  Twenty-seven of the DMR were hypermethylated and 18 DMR were hypomethylated in the EE<sub>2</sub> treatment compared to the control.  Four of the DMRs were located upstream of transcription start site (TSS) while the remaining 41 DMR were in the gene bodies either in an intron (22), exon (8), or spanning one or more exon/intron junctions (11).  See Table 2 for a list of DMR and their annotations based on blastx comparison to Uni-Prot SwissProt database. 
 
 ![Figure 2](./img/Figure-2.png)
 
-**Figure 2** Location of Differentially Methylated Regions (DMRs) upon EE<sub>2</sub> exposure  (7 days) in female oyster gonads.
+**Figure 2** Screenshot of IGV showing DMRs, and feature tracks for three comparisons input vs input, EE<sub>2</sub> vs control, and EE<sub>2</sub> vs control (dye swap) (Figure 3)
+
+![Figure 3](./img/Figure-3.png)
+
+**Figure 3** Location of Differentially Methylated Regions (DMRs) upon EE<sub>2</sub> exposure  (7 days) in female oyster gonads.
 
 **Table 2**. Table of differentially methylated regions (DMR). DMR ID gives the location of the DMR by scaffold number_start site.  Location of the DMR either in an exon, intron, 5’ of the gene or crossing at least 1 exon/intron junction (junction) is listed in the annotation column.
 
