@@ -1,6 +1,6 @@
 # Influence of 17α-ethinylestradiol on DNA Methylation in Oysters
 
-**Mackenzie R. Gavery and Steven B. Roberts**
+**Mackenzie R. Gavery, Jeff Delrow, Ryan Basom, and Steven B. Roberts**
 
 [Contact authors](https://github.com/sr320/paper-Oyster-EE2/issues/new)
 
