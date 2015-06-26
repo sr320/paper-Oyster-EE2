@@ -14,7 +14,7 @@ This repository includes a scientific report on an experiment designed to examin
 -  `tracks/2013.11.21.A03_smoothed.wig` - normalized and smoothed feature track (EE2 vs control - dye swap).      
 -  `tracks/OID40453_probe_locations` - location of probes from array across the genome.
 - `tracks/oyster-EE2-DMR.gff` - Differentially methylated features.
--  `img` - directory containing manuscript figures and table (image).    
+-  `img/` - directory containing manuscript figures and table (image).    
 -  `misc/` - directory with RPubs backup, R code       
 -  `array-raw/` directory containing raw intensity files.
 -  `array-description/` directory with details of array design, contains [readme.md](https://github.com/sr320/paper-Oyster-EE2/blob/master/array-description/readme.md) with file previews. 
