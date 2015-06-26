@@ -2,7 +2,7 @@
 
 Format of files in this directory (running `head`).
 
-**OID40453_annotation.gff **
+**OID40453_annotation.gff**
 
 ```
 C16582	TJGR_v9	transcripts	35	385	-1	.	.	ID=CGI_10000001; color=000000
@@ -17,7 +17,7 @@ C18980	TJGR_v9	transcripts	30	674	+1	.	.	ID=CGI_10000012; color=000000
 C19100	TJGR_v9	transcripts	160	681	-1	.	.	ID=CGI_10000013; color=000000
 ```
 
-**OID40453_probe_locations.gff **
+**OID40453_probe_locations.gff**
 
 ```
 scaffold1	NGS	OID40453_probe_locations	52347	52396	1	color=000000
@@ -42,6 +42,9 @@ CCTTTGCCTTTTTTTCAAAAATGCAATGCTTGTCAAGATGTTTTAGATGAAGCTGTGG	scaffold39960:+:29572
 CATTTCCTATTTCCTCATCTTAATAATAGCCAAGGGTTTTTAGTCCACTTTGCTC	scaffold39960:+:29677	scaffold39960:29300-48043	29677		target_tm:76.00;probe_tm:73.90;freq: 6.46;count:01;rules:0000;score:0916	experimental	73.90	 6.46	   0	0.00	0.00	0.00	0.00	0	 916	1
 AAATGCCTTTGATTTTGGATCTTTATATAACAAATACAATTCATAATTTGACTGTT	scaffold39960:+:29807	scaffold39960:29300-48043	29807		target_tm:76.00;probe_tm:68.70;freq:24.29;count:04;rules:0000;score:0417	experimental	68.70	24.29	4	   0	0.00	0.00	0.00	0.00	0	 417	1
 TTTTAGTCATATATTTATACAACTAAGGTGAAAGAAAAGACTAAAGTTTCCT	scaffold39960:+:29947	scaffold39960:29300-48043	29947		target_tm:76.00;probe_tm:68.60;freq: 8.53;count:01;rules:0000;score:0790	experimental	68.60	 8.53	   0	0.00	0.00	0.00	0.00	0	 790	1
+
+```
+
 
 
 **OID40453_stats.txt** 
