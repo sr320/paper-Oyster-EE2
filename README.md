@@ -1,6 +1,7 @@
 # Influence of 17α-ethinylestradiol on DNA Methylation in Oysters
 This repository includes a scientific report on an experiment designed to examine the impact of 17α-ethinylestradiol (a main component of birth control pills) on DNA methylation.
 
+[![DOI](https://zenodo.org/badge/doi/10.5281/zenodo.19046.svg)](http://dx.doi.org/10.5281/zenodo.19046)
 
 
 
