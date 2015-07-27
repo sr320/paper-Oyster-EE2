@@ -19,3 +19,6 @@ This repository includes a scientific report on an experiment designed to examin
 -  `misc/` - directory with RPubs backup, R code       
 -  `array-raw/` directory containing raw intensity files.
 -  `array-description/` directory with details of array design, contains [readme.md](https://github.com/sr320/paper-Oyster-EE2/blob/master/array-description/readme.md) with file previews. 
+
+
+This work was supported in part by the National Science Foundation (NSF) under Grant Number 1158119 awarded to SR Roberts.
